@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[My Octopress Blog]]></title>
+  <link href="http://anaerobeth.github.io/atom.xml" rel="self"/>
+  <link href="http://anaerobeth.github.io/"/>
+  <updated>2013-08-29T16:05:30-04:00</updated>
+  <id>http://anaerobeth.github.io/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Big Data is watching you]]></title>
+    <link href="http://anaerobeth.github.io/blog/2013/08/29/big-data-is-watching-you/"/>
+    <updated>2013-08-29T15:52:00-04:00</updated>
+    <id>http://anaerobeth.github.io/blog/2013/08/29/big-data-is-watching-you</id>
+    <content type="html"><![CDATA[<p>BBC UK weighs in on how <a href="http://www.bbc.co.uk/news/technology-23253949">building a digital copy of our physical world</a> can have profound consequences on how we live:</p>
+
+<blockquote><h2>Tomorrow&rsquo;s cities: How big data is changing the world</h2>
+
+<p>Nick Pickles, director of privacy campaign group Big Brother Watch, agrees that big data could become just another word for Big Brother.
+&ldquo;The core functionality of a smart city requires a vast amount data to be collected on every aspect of our lives every minute of every day. The question is how does that data get used? And it doesn&rsquo;t require a huge amount of imagination to see how it could be used to monitor people in a very real Big Brother way.
+&#8220;At present the control of information is being taken away from citizens, and companies providing services are rushing to find ways of generating revenue from the data they hold. The danger is that when smart cities become a reality, individuals will not be able to control the ways they are monitored or what happens to the information, which is exactly the opposite of how it should be.&rdquo;
+The issue has huge implications for society and is going to need serious debate, Dr Ratti believes.</p></blockquote>
+]]></content>
+  </entry>
+  
+</feed>
