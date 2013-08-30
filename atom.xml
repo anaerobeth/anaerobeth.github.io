@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Waiting for Singularity]]></title>
   <link href="http://anaerobeth.github.io/atom.xml" rel="self"/>
   <link href="http://anaerobeth.github.io/"/>
-  <updated>2013-08-29T18:43:20-04:00</updated>
+  <updated>2013-08-30T08:20:28-04:00</updated>
   <id>http://anaerobeth.github.io/</id>
   <author>
     <name><![CDATA[Beth Tenorio]]></name>
