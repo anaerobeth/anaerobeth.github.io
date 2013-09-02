@@ -99,8 +99,10 @@ True if it is a palindrome and False otherwise (an exercise from Chapter 6 of Th
 
 <pre><code>def first(word):
     return word[0]
+
 def last(word):
     return word[-1]
+
 def middle(word):
     return word[1:-1]
 
@@ -110,6 +112,11 @@ def is_palindrome(word):
     if first(word) != last(word):
         return False
     return is_palindrome(middle(word))
+
+words = ['cat', 'noon', 'radar', 'swallows', 'racecar']
+
+for word in words:
+  print '%s: %s' % (word, is_palindrome(word))
 </code></pre>
 
 <h3>Solution in Ruby</h3>
@@ -135,6 +142,7 @@ def is_palindrome?(word)
     return is_palindrome?(middle(word))
   end
 end
+
 puts "Palindrome Detector"
 
 array = %w[cat noon radar swallows racecar]

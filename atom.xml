@@ -4,7 +4,7 @@
   <title><![CDATA[Waiting for Singularity]]></title>
   <link href="http://anaerobeth.github.io/atom.xml" rel="self"/>
   <link href="http://anaerobeth.github.io/"/>
-  <updated>2013-09-02T10:37:07-04:00</updated>
+  <updated>2013-09-02T10:49:13-04:00</updated>
   <id>http://anaerobeth.github.io/</id>
   <author>
     <name><![CDATA[Beth Tenorio]]></name>
@@ -25,8 +25,10 @@ True if it is a palindrome and False otherwise (an exercise from Chapter 6 of Th
 
 <pre><code>def first(word):
     return word[0]
+
 def last(word):
     return word[-1]
+
 def middle(word):
     return word[1:-1]
 
@@ -36,6 +38,11 @@ def is_palindrome(word):
     if first(word) != last(word):
         return False
     return is_palindrome(middle(word))
+
+words = ['cat', 'noon', 'radar', 'swallows', 'racecar']
+
+for word in words:
+  print '%s: %s' % (word, is_palindrome(word))
 </code></pre>
 
 <h3>Solution in Ruby</h3>
@@ -61,6 +68,7 @@ def is_palindrome?(word)
     return is_palindrome?(middle(word))
   end
 end
+
 puts "Palindrome Detector"
 
 array = %w[cat noon radar swallows racecar]
