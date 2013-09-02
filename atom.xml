@@ -4,7 +4,7 @@
   <title><![CDATA[Waiting for Singularity]]></title>
   <link href="http://anaerobeth.github.io/atom.xml" rel="self"/>
   <link href="http://anaerobeth.github.io/"/>
-  <updated>2013-08-30T08:20:28-04:00</updated>
+  <updated>2013-09-02T10:37:07-04:00</updated>
   <id>http://anaerobeth.github.io/</id>
   <author>
     <name><![CDATA[Beth Tenorio]]></name>
@@ -12,6 +12,74 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Palindrome checker in Python and Ruby]]></title>
+    <link href="http://anaerobeth.github.io/blog/2013/09/02/palindrome-checker-in-python-and-ruby/"/>
+    <updated>2013-09-02T09:18:00-04:00</updated>
+    <id>http://anaerobeth.github.io/blog/2013/09/02/palindrome-checker-in-python-and-ruby</id>
+    <content type="html"><![CDATA[<p>Write a function that takes a string argument and returns
+True if it is a palindrome and False otherwise (an exercise from Chapter 6 of Think Python by Allen Downey).</p>
+
+<h3>Solution in Python</h3>
+
+<pre><code>def first(word):
+    return word[0]
+def last(word):
+    return word[-1]
+def middle(word):
+    return word[1:-1]
+
+def is_palindrome(word):
+    if len(word) &lt;=1:
+        return True
+    if first(word) != last(word):
+        return False
+    return is_palindrome(middle(word))
+</code></pre>
+
+<h3>Solution in Ruby</h3>
+
+<pre><code>def first_letter(word)
+  word[0]
+end
+
+def last_letter(word)
+  word[-1]
+end
+
+def middle(word)
+  word.byteslice(1..-2)
+end
+
+def is_palindrome?(word)
+  if word.length &lt;= 1
+    return 'True'
+  elsif first_letter(word) != last_letter(word)
+    return 'False'
+  else
+    return is_palindrome?(middle(word))
+  end
+end
+puts "Palindrome Detector"
+
+array = %w[cat noon radar swallows racecar]
+array.each do |word|
+  puts "#{word}: #{is_palindrome?(word)}"
+end
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code>Palindrome Detector
+cat: False
+noon: True
+radar: True
+swallows: False
+racecar: True
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Big Data is watching you]]></title>

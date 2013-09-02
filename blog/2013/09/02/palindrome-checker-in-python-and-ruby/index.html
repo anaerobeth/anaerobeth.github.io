@@ -5,13 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - Waiting for Singularity</title>
+  <title>Palindrome checker in Python and Ruby - Waiting for Singularity</title>
   <meta name="author" content="Beth Tenorio">
 
   
-  <meta name="description" content="Blog Archive 2013 Palindrome checker in Python and Ruby
-Sep 02 2013 Big Data is watching you
-Aug 29 2013 Recent Posts Palindrome Checker in Python &hellip;">
+  <meta name="description" content="Write a function that takes a string argument and returns
+True if it is a palindrome and False otherwise (an exercise from Chapter 6 of Think Python &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +19,7 @@ Aug 29 2013 Recent Posts Palindrome Checker in Python &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://anaerobeth.github.io/blog/archives">
+  <link rel="canonical" href="http://anaerobeth.github.io/blog/2013/09/02/palindrome-checker-in-python-and-ruby">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Waiting for Singularity" type="application/atom+xml">
@@ -66,41 +65,137 @@ Aug 29 2013 Recent Posts Palindrome Checker in Python &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">Palindrome Checker in Python and Ruby</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-02T09:18:00-04:00" pubdate data-updated="true">Sep 2<span>nd</span>, 2013</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>Write a function that takes a string argument and returns
+True if it is a palindrome and False otherwise (an exercise from Chapter 6 of Think Python by Allen Downey).</p>
 
-  
-  <h2>2013</h2>
+<h3>Solution in Python</h3>
 
-<article>
-  
-<h1><a href="/blog/2013/09/02/palindrome-checker-in-python-and-ruby/">Palindrome checker in Python and Ruby</a></h1>
-<time datetime="2013-09-02T09:18:00-04:00" pubdate><span class='month'>Sep</span> <span class='day'>02</span> <span class='year'>2013</span></time>
+<pre><code>def first(word):
+    return word[0]
+def last(word):
+    return word[-1]
+def middle(word):
+    return word[1:-1]
 
+def is_palindrome(word):
+    if len(word) &lt;=1:
+        return True
+    if first(word) != last(word):
+        return False
+    return is_palindrome(middle(word))
+</code></pre>
 
-</article>
+<h3>Solution in Ruby</h3>
 
+<pre><code>def first_letter(word)
+  word[0]
+end
 
+def last_letter(word)
+  word[-1]
+end
 
-<article>
-  
-<h1><a href="/blog/2013/08/29/big-data-is-watching-you/">Big Data is watching you</a></h1>
-<time datetime="2013-08-29T15:52:00-04:00" pubdate><span class='month'>Aug</span> <span class='day'>29</span> <span class='year'>2013</span></time>
+def middle(word)
+  word.byteslice(1..-2)
+end
 
+def is_palindrome?(word)
+  if word.length &lt;= 1
+    return 'True'
+  elsif first_letter(word) != last_letter(word)
+    return 'False'
+  else
+    return is_palindrome?(middle(word))
+  end
+end
+puts "Palindrome Detector"
 
-</article>
+array = %w[cat noon radar swallows racecar]
+array.each do |word|
+  puts "#{word}: #{is_palindrome?(word)}"
+end
+</code></pre>
 
+<p>Outputs:</p>
+
+<pre><code>Palindrome Detector
+cat: False
+noon: True
+radar: True
+swallows: False
+racecar: True
+</code></pre>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Beth Tenorio</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-02T09:18:00-04:00" pubdate data-updated="true">Sep 2<span>nd</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://anaerobeth.github.io/blog/2013/09/02/palindrome-checker-in-python-and-ruby/" data-via="" data-counturl="http://anaerobeth.github.io/blog/2013/09/02/palindrome-checker-in-python-and-ruby/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/08/29/big-data-is-watching-you/" title="Previous Post: Big Data is watching you">&laquo; Big Data is watching you</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>
