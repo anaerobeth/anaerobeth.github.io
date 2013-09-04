@@ -4,7 +4,7 @@
   <title><![CDATA[Waiting for Singularity]]></title>
   <link href="http://anaerobeth.github.io/atom.xml" rel="self"/>
   <link href="http://anaerobeth.github.io/"/>
-  <updated>2013-09-04T13:29:28-04:00</updated>
+  <updated>2013-09-04T13:31:03-04:00</updated>
   <id>http://anaerobeth.github.io/</id>
   <author>
     <name><![CDATA[Beth Tenorio]]></name>
@@ -26,8 +26,9 @@
 
 <h3>Text 1-617-9936601 for an inspirational chess quote</h3>
 
-<p><em>The beauty of a move lies not in its appearance but in the thought behind it.</em>
-&ndash;  Aaron Nimzowitsch</p>
+<pre><code>*The beauty of a move lies not in its appearance but in the thought behind it.*
+-  Aaron Nimzowitsch
+</code></pre>
 ]]></content>
   </entry>
   
