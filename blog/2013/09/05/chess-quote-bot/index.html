@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Waiting for Singularity</title>
+  <title>Chess Quote Bot - Waiting for Singularity</title>
   <meta name="author" content="Beth Tenorio">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://anaerobeth.github.io">
+  <link rel="canonical" href="http://anaerobeth.github.io/blog/2013/09/05/chess-quote-bot">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Waiting for Singularity" type="application/atom+xml">
@@ -63,15 +63,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/09/05/chess-quote-bot/">Chess Quote Bot</a></h1>
+      <h1 class="entry-title">Chess Quote Bot</h1>
     
     
       <p class="meta">
@@ -94,7 +91,7 @@
   </header>
 
 
-  <div class="entry-content"><p>Chess Quote Bot</p>
+<div class="entry-content"><p>Chess Quote Bot</p>
 
 <p>A <a href="https://github.com/anaerobeth/BSS_SMS_QuoteBot/blob/master/app.py">quote bot app</a> developed using Python, Flask and Twilio API.</p>
 
@@ -107,58 +104,16 @@
 <pre><code>                                                      -  Aaron Nimzowitsch
 </code></pre>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/03/sublime-text-pro-tips/">Sublime Text 2 Pro Tip: Multiple Cursors</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Beth Tenorio</span></span>
 
-<time datetime="2013-09-03T11:58:00-04:00" pubdate data-updated="true">Sep 3<span>rd</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Learn about Multiple Cursors and other pro tips from the article <a href="http://www.webdesignermag.co.uk/inspiration/10-must-know-sublime-text-2-tips/">10 Must-know Sublime Text 2 tips</a>.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/02/palindrome-checker-in-python-and-ruby/">Palindrome Checker in Python and Ruby</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -170,138 +125,32 @@
   
 
 
-<time datetime="2013-09-02T09:18:00-04:00" pubdate data-updated="true">Sep 2<span>nd</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Write a function that takes a string argument and returns
-True if it is a palindrome and False otherwise (an exercise from Chapter 6 of Think Python by Allen Downey).</p>
-
-<h3>Solution in Python</h3>
-
-<pre><code>def first(word):
-    return word[0]
-
-def last(word):
-    return word[-1]
-
-def middle(word):
-    return word[1:-1]
-
-def is_palindrome(word):
-    if len(word) &lt;=1:
-        return True
-    if first(word) != last(word):
-        return False
-    return is_palindrome(middle(word))
-
-words = ['cat', 'noon', 'radar', 'swallows', 'racecar']
-
-for word in words:
-  print '%s: %s' % (word, is_palindrome(word))
-</code></pre>
-
-<h3>Solution in Ruby</h3>
-
-<pre><code>def first_letter(word)
-  word[0]
-end
-
-def last_letter(word)
-  word[-1]
-end
-
-def middle(word)
-  word.byteslice(1..-2)
-end
-
-def is_palindrome?(word)
-  if word.length &lt;= 1
-    return 'True'
-  elsif first_letter(word) != last_letter(word)
-    return 'False'
-  else
-    return is_palindrome?(middle(word))
-  end
-end
-
-puts "Palindrome Detector"
-
-array = %w[cat noon radar swallows racecar]
-array.each do |word|
-  puts "#{word}: #{is_palindrome?(word)}"
-end
-</code></pre>
-
-<p>Outputs:</p>
-
-<pre><code>Palindrome Detector
-cat: False
-noon: True
-radar: True
-swallows: False
-racecar: True
-</code></pre>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+<time datetime="2013-09-05T15:58:00-04:00" pubdate data-updated="true">Sep 5<span>th</span>, 2013</time>
       
-  <header>
+
+
+    </p>
     
-      <h1 class="entry-title"><a href="/blog/2013/08/29/big-data-is-watching-you/">Big Data Is Watching You</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
+      <div class="sharing">
   
-
-
-<time datetime="2013-08-29T15:52:00-04:00" pubdate data-updated="true">Aug 29<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>BBC UK weighs in on how <a href="http://www.bbc.co.uk/news/technology-23253949">building a digital copy of our physical world</a> can have profound consequences on how we live:</p>
-
-<blockquote><h2>Tomorrow&rsquo;s cities: How big data is changing the world</h2>
-
-<p>Nick Pickles, director of privacy campaign group Big Brother Watch, agrees that big data could become just another word for Big Brother. &ldquo;The core functionality of a smart city requires a vast amount data to be collected on every aspect of our lives every minute of every day. The question is how does that data get used? And it doesn&rsquo;t require a huge amount of imagination to see how it could be used to monitor people in a very real Big Brother way.&rdquo;</p>
-
-<p>&ldquo;At present the control of information is being taken away from citizens, and companies providing services are rushing to find ways of generating revenue from the data they hold. The danger is that when smart cities become a reality, individuals will not be able to control the ways they are monitored or what happens to the information, which is exactly the opposite of how it should be.&rdquo;</p>
-
-<p>The issue has huge implications for society and is going to need serious debate, Dr Ratti believes.</p></blockquote>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://anaerobeth.github.io/blog/2013/09/05/chess-quote-bot/" data-via="" data-counturl="http://anaerobeth.github.io/blog/2013/09/05/chess-quote-bot/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/09/03/sublime-text-pro-tips/" title="Previous Post: Sublime Text 2 Pro Tip: Multiple Cursors ">&laquo; Sublime Text 2 Pro Tip: Multiple Cursors </a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
 </div>
+
 <aside class="sidebar">
   
     <section>
@@ -333,6 +182,7 @@ racecar: True
 
   
 </aside>
+
 
     </div>
   </div>
