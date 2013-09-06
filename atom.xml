@@ -4,7 +4,7 @@
   <title><![CDATA[Waiting for Singularity]]></title>
   <link href="http://anaerobeth.github.io/atom.xml" rel="self"/>
   <link href="http://anaerobeth.github.io/"/>
-  <updated>2013-09-05T20:03:49-04:00</updated>
+  <updated>2013-09-05T20:04:40-04:00</updated>
   <id>http://anaerobeth.github.io/</id>
   <author>
     <name><![CDATA[Beth Tenorio]]></name>
@@ -40,11 +40,11 @@
     <content type="html"><![CDATA[<p>A program to encrypt a message in ROT13 by shifting a letter through the alphabet (an exercise from Chapter 8 of Think Python by Allen Downey)</p>
 
 <p>ASCII numbers
-* ord(&lsquo;a&rsquo;) => 97
-* ord(&lsquo;z&rsquo;) => 122
-* ord(&lsquo;A&rsquo;) = > 65
-* ord(&lsquo;Z&rsquo;) = > 90
-* chr(97) => &lsquo;a&rsquo;</p>
+  ord(&lsquo;a&rsquo;) => 97
+  ord(&lsquo;z&rsquo;) => 122
+  ord(&lsquo;A&rsquo;) = > 65
+  ord(&lsquo;Z&rsquo;) = > 90
+  chr(97) => &lsquo;a&rsquo;</p>
 
 <p>Key is the number of places the letters of the message should be moved during encryption</p>
 
