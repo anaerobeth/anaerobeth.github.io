@@ -4,7 +4,7 @@
   <title><![CDATA[Waiting for Singularity]]></title>
   <link href="http://anaerobeth.github.io/atom.xml" rel="self"/>
   <link href="http://anaerobeth.github.io/"/>
-  <updated>2013-09-04T13:31:44-04:00</updated>
+  <updated>2013-09-05T20:01:04-04:00</updated>
   <id>http://anaerobeth.github.io/</id>
   <author>
     <name><![CDATA[Beth Tenorio]]></name>
@@ -28,6 +28,82 @@
 
 <pre><code>The beauty of a move lies not in its appearance but in the thought behind it.
 -  Aaron Nimzowitsch
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ROT13 encryption in Python and Ruby]]></title>
+    <link href="http://anaerobeth.github.io/blog/2013/09/04/rot13-encryption-in-python-and-ruby/"/>
+    <updated>2013-09-04T15:58:00-04:00</updated>
+    <id>http://anaerobeth.github.io/blog/2013/09/04/rot13-encryption-in-python-and-ruby</id>
+    <content type="html"><![CDATA[<p>A program to encrypt a message in ROT13 by shifting a letter through the alphabet (an exercise from Chapter 8 of Think Python by Allen Downey)</p>
+
+<p>ASCII numbers
+ord(&lsquo;a&rsquo;) => 97
+ord(&lsquo;z&rsquo;) => 122
+ord(&lsquo;A&rsquo;) = > 65
+ord(&lsquo;Z&rsquo;) = > 90
+chr(97) => &lsquo;a&rsquo;
+Key is the number of places the letters of the message should be moved during encryption</p>
+
+<h3>Solution in Python</h3>
+
+<pre><code>def rotate_word(message, key):
+    new_message = ''
+    s = message.lower()
+    for letter in s:
+        new_ord = key + ord(letter)
+        if new_ord &gt; 122:
+            new_ord = new_ord - 26
+            new_letter = chr(new_ord)
+        else:
+            new_letter = chr(new_ord)
+
+        new_message = new_message + new_letter
+    return new_message.lower()
+
+words = ['abc', 'python', 'ruby', 'unladen swallow']
+
+print "*** Messages encrypted in ROT13 ***"
+for word in words:
+    print "%s: %s" % (word, rotate_word(word, 13))
+</code></pre>
+
+<h3>Solution in Ruby</h3>
+
+<pre><code>def rotate_word(message, key)
+  new_message = ''
+  message.downcase!
+  message_array = message.split('')
+  message_array.each do |m|
+    new_ord = key + m[0].ord
+    if new_ord &gt; 122
+      new_ord = new_ord - 26
+      new_letter = new_ord.chr
+    else
+      new_letter = new_ord.chr
+    end
+    new_message = new_message + new_letter
+  end
+  return new_message.downcase
+end
+
+words = ['abc', 'python', 'ruby', 'unladen swallow']
+
+puts "*** Messages encrypted in ROT13 ***"
+words.each do |word|
+    puts "#{word}: #{rotate_word(word, 13)}"
+end
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code>*** Messages encrypted in ROT13 ***
+abc: nop
+python: clguba
+ruby: ehol
+unladen swallow: haynqra-fjnyybj
 </code></pre>
 ]]></content>
   </entry>

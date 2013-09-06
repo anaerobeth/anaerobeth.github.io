@@ -117,6 +117,109 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/09/04/rot13-encryption-in-python-and-ruby/">ROT13 Encryption in Python and Ruby</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-04T15:58:00-04:00" pubdate data-updated="true">Sep 4<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>A program to encrypt a message in ROT13 by shifting a letter through the alphabet (an exercise from Chapter 8 of Think Python by Allen Downey)</p>
+
+<p>ASCII numbers
+ord(&lsquo;a&rsquo;) => 97
+ord(&lsquo;z&rsquo;) => 122
+ord(&lsquo;A&rsquo;) = > 65
+ord(&lsquo;Z&rsquo;) = > 90
+chr(97) => &lsquo;a&rsquo;
+Key is the number of places the letters of the message should be moved during encryption</p>
+
+<h3>Solution in Python</h3>
+
+<pre><code>def rotate_word(message, key):
+    new_message = ''
+    s = message.lower()
+    for letter in s:
+        new_ord = key + ord(letter)
+        if new_ord &gt; 122:
+            new_ord = new_ord - 26
+            new_letter = chr(new_ord)
+        else:
+            new_letter = chr(new_ord)
+
+        new_message = new_message + new_letter
+    return new_message.lower()
+
+words = ['abc', 'python', 'ruby', 'unladen swallow']
+
+print "*** Messages encrypted in ROT13 ***"
+for word in words:
+    print "%s: %s" % (word, rotate_word(word, 13))
+</code></pre>
+
+<h3>Solution in Ruby</h3>
+
+<pre><code>def rotate_word(message, key)
+  new_message = ''
+  message.downcase!
+  message_array = message.split('')
+  message_array.each do |m|
+    new_ord = key + m[0].ord
+    if new_ord &gt; 122
+      new_ord = new_ord - 26
+      new_letter = new_ord.chr
+    else
+      new_letter = new_ord.chr
+    end
+    new_message = new_message + new_letter
+  end
+  return new_message.downcase
+end
+
+words = ['abc', 'python', 'ruby', 'unladen swallow']
+
+puts "*** Messages encrypted in ROT13 ***"
+words.each do |word|
+    puts "#{word}: #{rotate_word(word, 13)}"
+end
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code>*** Messages encrypted in ROT13 ***
+abc: nop
+python: clguba
+ruby: ehol
+unladen swallow: haynqra-fjnyybj
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/09/03/sublime-text-pro-tips/">Sublime Text 2 Pro Tip: Multiple Cursors</a></h1>
     
     
@@ -309,6 +412,10 @@ racecar: True
     
       <li class="post">
         <a href="/blog/2013/09/05/chess-quote-bot/">Chess Quote Bot</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/04/rot13-encryption-in-python-and-ruby/">ROT13 Encryption in Python and Ruby</a>
       </li>
     
       <li class="post">
