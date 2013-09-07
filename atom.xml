@@ -4,7 +4,7 @@
   <title><![CDATA[Waiting for Singularity]]></title>
   <link href="http://anaerobeth.github.io/atom.xml" rel="self"/>
   <link href="http://anaerobeth.github.io/"/>
-  <updated>2013-09-07T15:27:22-04:00</updated>
+  <updated>2013-09-07T15:45:17-04:00</updated>
   <id>http://anaerobeth.github.io/</id>
   <author>
     <name><![CDATA[Beth Tenorio]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[All the buzz about Fizzbuzz]]></title>
-    <link href="http://anaerobeth.github.io/blog/2013/09/08/all-the-buzz-about-fizzbuzz/"/>
-    <updated>2013-09-08T15:12:00-04:00</updated>
-    <id>http://anaerobeth.github.io/blog/2013/09/08/all-the-buzz-about-fizzbuzz</id>
+    <link href="http://anaerobeth.github.io/blog/2013/09/07/all-the-buzz-about-fizzbuzz/"/>
+    <updated>2013-09-07T15:12:00-04:00</updated>
+    <id>http://anaerobeth.github.io/blog/2013/09/07/all-the-buzz-about-fizzbuzz</id>
     <content type="html"><![CDATA[<h2>All the buzz about FizzBuzz</h2>
 
 <h3>Do companies still use <a href="http://c2.com/cgi/wiki?FizzBuzzTest">Fizzbuzz</a> to find programmers who can code?</h3>
@@ -87,94 +87,6 @@ JavaScript  ozy4dm  56  0.0450  07/02/25 11:49:44 0B / 30B / 26B
 AWK nn  57  0.0024  08/10/27 18:16:48 0B / 32B / 24B
 Bash  daishi  41  0.0152  11/02/26 19:02:54 0B / ?B / ?B
 Scala lyrical_logical 66  7.8083  11/07/12 02:19:22 0B / 36B / 29B</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Pi Approximation in Python and Ruby]]></title>
-    <link href="http://anaerobeth.github.io/blog/2013/09/07/pi-approximation-in-python-and-ruby/"/>
-    <updated>2013-09-07T17:58:00-04:00</updated>
-    <id>http://anaerobeth.github.io/blog/2013/09/07/pi-approximation-in-python-and-ruby</id>
-    <content type="html"><![CDATA[<p>In 1910, the mathematician Srinivasa Ramanujan found several rapidly converging infinite series that can be used to generate <a href="http://en.wikipedia.org/wiki/Srinivasa_Ramanujan#Mathematical_achievements">a numerical approximation of pi</a>. His series are now the basis for the fastest algorithms currently used to calculate π.</p>
-
-<p>Below are implementations of a function called estimate_pi that uses his formula to compute and return an estimate of pi(an exercise from Chapter 7 of Think Python by Allen Downey).</p>
-
-<h3>Solution in Python</h3>
-
-<pre><code>import math
-
-def factorial(n):
-    if n == 0:
-        return 1
-    else:
-        recurse = factorial(n-1)
-        result = n * recurse
-        return result
-
-def estimate_pi():
-    total = 0
-    k = 0
-    factor = 2 * math.sqrt(2) / 9801
-    keep_going = True
-    while keep_going == True:
-        numerator = float(factorial(4*k) * (1103 + 26390 * k))
-        denominator = float(factorial(k)**4) * 396**(4*k)
-        term = factor * float(numerator/denominator)
-        total += term
-        k += 1
-        if term &lt; 1e-15:
-            keep_going == False
-            print "Finished at iteration number", k
-            break
-    return 1 / total
-
-print estimate_pi()
-</code></pre>
-
-<h3>Solution in Ruby</h3>
-
-<pre><code>def factorial(n)
-  if n == 0
-    return 1
-  else
-    recurse = factorial(n-1)
-    result = n * recurse
-  end
-  return result
-end
-
-def estimate_pi
-  total = 0
-  k = 0
-  factor = 2 * Math.sqrt(2) / 9801
-  keep_going = true
-
-  while keep_going == true
-    numerator = (factorial(4*k).to_f * (1103 + 26390 * k).to_f)
-    denominator = (factorial(k).to_f**4) * 396**(4*k).to_f
-    term = factor.to_f * (numerator.to_f/denominator.to_f)
-    total += term
-    k += 1
-    puts term &lt; 1E-15
-
-    if term &lt; 1E-15
-      keep_going == false
-      puts "Finished at iteration number #{k}"
-      break
-    end
-
-  end
-  return 1 / total
-end
-
-puts estimate_pi()
-</code></pre>
-
-<p>Outputs:</p>
-
-<pre><code>Finished at iteration number 3
-3.14159265359
-</code></pre>
 ]]></content>
   </entry>
   
