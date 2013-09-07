@@ -4,7 +4,7 @@
   <title><![CDATA[Waiting for Singularity]]></title>
   <link href="http://anaerobeth.github.io/atom.xml" rel="self"/>
   <link href="http://anaerobeth.github.io/"/>
-  <updated>2013-09-07T13:52:03-04:00</updated>
+  <updated>2013-09-07T15:13:58-04:00</updated>
   <id>http://anaerobeth.github.io/</id>
   <author>
     <name><![CDATA[Beth Tenorio]]></name>
@@ -12,6 +12,76 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[All the buzz about Fizzbuzz]]></title>
+    <link href="http://anaerobeth.github.io/blog/2013/09/08/all-the-buzz-about-fizzbuzz/"/>
+    <updated>2013-09-08T15:12:00-04:00</updated>
+    <id>http://anaerobeth.github.io/blog/2013/09/08/all-the-buzz-about-fizzbuzz</id>
+    <content type="html"><![CDATA[<h2>All the buzz about FizzBuzz</h2>
+
+<h3>Do companies still use <a href="http://c2.com/cgi/wiki?FizzBuzzTest">Fizzbuzz</a> to find programmers who can code?</h3>
+
+<p>The test may be <a href="http://imranontech.com/2007/01/24/using-fizzbuzz-to-find-developers-who-grok-coding/">old news</a> but the answer still seem to be Yes, with some interesting observations: Global nerdy found that only <a href="http://www.globalnerdy.com/2012/11/15/fizzbuzz-still-works/">40% of the candidates</a> he interviewed could write FizzBuzz, LosTechies believe it provides <a href="http://lostechies.com/jimmybogard/2013/01/29/fizzbuzz-is-dead-long-live-fizzbuzz/">an accurate window into coding skills</a>, while <a href="http://rtigger.com/blog/2013/07/23/the-shortcomings-of-fizzbuzz">some engineers think it is plain boring</a>.</p>
+
+<h3>FizzBuzz test:</h3>
+
+<p>Write a program that prints out the numbers from 1 through 100, but…
+  For numbers that are multiples of 3, print “Fizz” instead of the number.
+  For numbers that are multiples of 5, print “Buzz” instead of the number
+  For numbers that are multiples of both 3 and 5, print “FizzBuzz” instead of the number.</p>
+
+<h3>Shortest Fizzbuzz Scripts</h3>
+
+<p>Implemented in Python</p>
+
+<pre><code>for i in range(1,101):print"FizzBuzz"[i*i%3*4:8--i**4%5]or i
+for i in range(1,101):print"Fizz"*(i%3&lt;1)+"Buzz"*(i%5&lt;1)or i
+for x in range(100): print x%3/2*'Fizz'+x%5/4*'Buzz' or x+1
+
+via  http://koichitamura.blogspot.com/2009/05/python-fizzbuzz.html
+and tested on Python v2.7.2
+</code></pre>
+
+<p>Implemented in Ruby</p>
+
+<pre><code>(1..100).map{|n|puts"FizzBuzz#{n}"[n%3&lt;1?0:n%5&lt;1?4:8,n%15&lt;1?8:4]}
+1.upto(100){|i|p"FizzBuzz#{i}"[i%3&lt;1?0:i%5&lt;1?4:8,i%15&lt;1?8:4]}
+100.times{|i|p"FizzBuzz#{i}"[i%3&lt;1?0:i%5&lt;1?4:8,i%15&lt;1?8:4]}
+
+via http://golf.shinh.org/p.rb?FizzBuzz and tested on Ruby v2.0.0
+</code></pre>
+
+<p>Implemented in Perl</p>
+
+<pre><code>perl -le'print(($_%3?"":Fizz).($_%5?"":Buzz)or$_)for 1..100'
+perl -M5.01 -e 'say+(Fizz)[$_%3].(Buzz)[$_%5]||$_,for 1..100'
+
+via http://www.perlmonks.org/?node_id=602901 tested on v5.12.4
+</code></pre>
+
+<p>Implemented in PHP</p>
+
+<pre><code>while(++$i&lt;100)echo($i%15?$i%3?$i%5?$i:Buzz:Fizz:FizzBuzz)."\n";
+
+via http://jakespurlock.com/2012/11/php-fizzbuzz-test/ tested on PHP 5
+</code></pre>
+
+<h3>Statistics on Shortest FizzBuzz codes</h3>
+
+<p><a href="http://golf.shinh.org/p.rb?FizzBuzz">http://golf.shinh.org/p.rb?FizzBuzz</a></p>
+
+<p>Language  User  Size  Time  Date  Statistics
+Ruby  ksk 50  0.0162  11/02/15 00:33:41 0B / 25B / 24B
+Perl  shmem 48  0.0918  07/03/02 03:15:54 0B / 22B / 25B
+Python  Defenestrator 56  0.1151  07/04/20 06:07:37 0B / 35B / 20B
+Clojure youz  77  2.7364  11/06/01 17:38:52 0B / 47B / 24B
+JavaScript  ozy4dm  56  0.0450  07/02/25 11:49:44 0B / 30B / 26B
+AWK nn  57  0.0024  08/10/27 18:16:48 0B / 32B / 24B
+Bash  daishi  41  0.0152  11/02/26 19:02:54 0B / ?B / ?B
+Scala lyrical_logical 66  7.8083  11/07/12 02:19:22 0B / 36B / 29B</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Pi Approximation in Python and Ruby]]></title>
