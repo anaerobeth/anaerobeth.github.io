@@ -1,0 +1,748 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Waiting for Singularity</title>
+  <meta name="author" content="Beth Tenorio">
+
+  
+  <meta name="description" content="All the buzz about FizzBuzz Do companies still use Fizzbuzz to find programmers who can code? The test may be old news but the answer still seem to &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://anaerobeth.github.io">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Waiting for Singularity" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Waiting for Singularity</a></h1>
+  
+    <h2>Thoughts on science, tech and other preoccupations</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:anaerobeth.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/08/all-the-buzz-about-fizzbuzz/">All the Buzz About Fizzbuzz</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-08T15:12:00-04:00" pubdate data-updated="true">Sep 8<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>All the buzz about FizzBuzz</h2>
+
+<h3>Do companies still use <a href="http://c2.com/cgi/wiki?FizzBuzzTest">Fizzbuzz</a> to find programmers who can code?</h3>
+
+<p>The test may be <a href="http://imranontech.com/2007/01/24/using-fizzbuzz-to-find-developers-who-grok-coding/">old news</a> but the answer still seem to be Yes, with some interesting observations: Global nerdy found that only <a href="http://www.globalnerdy.com/2012/11/15/fizzbuzz-still-works/">40% of the candidates</a> he interviewed could write FizzBuzz, LosTechies believe it provides <a href="http://lostechies.com/jimmybogard/2013/01/29/fizzbuzz-is-dead-long-live-fizzbuzz/">an accurate window into coding skills</a>, while <a href="http://rtigger.com/blog/2013/07/23/the-shortcomings-of-fizzbuzz">some engineers think it is plain boring</a>.</p>
+
+<h3>FizzBuzz test:</h3>
+
+<p>Write a program that prints out the numbers from 1 through 100, but…
+  For numbers that are multiples of 3, print “Fizz” instead of the number.
+  For numbers that are multiples of 5, print “Buzz” instead of the number
+  For numbers that are multiples of both 3 and 5, print “FizzBuzz” instead of the number.</p>
+
+<h3>Shortest Fizzbuzz Scripts</h3>
+
+<p>Implemented in Python</p>
+
+<pre><code>for i in range(1,101):print"FizzBuzz"[i*i%3*4:8--i**4%5]or i
+for i in range(1,101):print"Fizz"*(i%3&lt;1)+"Buzz"*(i%5&lt;1)or i
+for x in range(100): print x%3/2*'Fizz'+x%5/4*'Buzz' or x+1
+
+via  http://koichitamura.blogspot.com/2009/05/python-fizzbuzz.html
+and tested on Python v2.7.2
+</code></pre>
+
+<p>Implemented in Ruby</p>
+
+<pre><code>(1..100).map{|n|puts"FizzBuzz#{n}"[n%3&lt;1?0:n%5&lt;1?4:8,n%15&lt;1?8:4]}
+1.upto(100){|i|p"FizzBuzz#{i}"[i%3&lt;1?0:i%5&lt;1?4:8,i%15&lt;1?8:4]}
+100.times{|i|p"FizzBuzz#{i}"[i%3&lt;1?0:i%5&lt;1?4:8,i%15&lt;1?8:4]}
+
+via http://golf.shinh.org/p.rb?FizzBuzz and tested on Ruby v2.0.0
+</code></pre>
+
+<p>Implemented in Perl</p>
+
+<pre><code>perl -le'print(($_%3?"":Fizz).($_%5?"":Buzz)or$_)for 1..100'
+perl -M5.01 -e 'say+(Fizz)[$_%3].(Buzz)[$_%5]||$_,for 1..100'
+
+via http://www.perlmonks.org/?node_id=602901 tested on v5.12.4
+</code></pre>
+
+<p>Implemented in PHP</p>
+
+<pre><code>while(++$i&lt;100)echo($i%15?$i%3?$i%5?$i:Buzz:Fizz:FizzBuzz)."\n";
+
+via http://jakespurlock.com/2012/11/php-fizzbuzz-test/ tested on PHP 5
+</code></pre>
+
+<h3>Statistics on Shortest FizzBuzz codes</h3>
+
+<p><a href="http://golf.shinh.org/p.rb?FizzBuzz">http://golf.shinh.org/p.rb?FizzBuzz</a></p>
+
+<p>Language  User  Size  Time  Date  Statistics
+Ruby  ksk 50  0.0162  11/02/15 00:33:41 0B / 25B / 24B
+Perl  shmem 48  0.0918  07/03/02 03:15:54 0B / 22B / 25B
+Python  Defenestrator 56  0.1151  07/04/20 06:07:37 0B / 35B / 20B
+Clojure youz  77  2.7364  11/06/01 17:38:52 0B / 47B / 24B
+JavaScript  ozy4dm  56  0.0450  07/02/25 11:49:44 0B / 30B / 26B
+AWK nn  57  0.0024  08/10/27 18:16:48 0B / 32B / 24B
+Bash  daishi  41  0.0152  11/02/26 19:02:54 0B / ?B / ?B
+Scala lyrical_logical 66  7.8083  11/07/12 02:19:22 0B / 36B / 29B</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/07/pi-approximation-in-python-and-ruby/">Pi Approximation in Python and Ruby</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-07T17:58:00-04:00" pubdate data-updated="true">Sep 7<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In 1910, the mathematician Srinivasa Ramanujan found several rapidly converging infinite series that can be used to generate <a href="http://en.wikipedia.org/wiki/Srinivasa_Ramanujan#Mathematical_achievements">a numerical approximation of pi</a>. His series are now the basis for the fastest algorithms currently used to calculate π.</p>
+
+<p>Below are implementations of a function called estimate_pi that uses his formula to compute and return an estimate of pi(an exercise from Chapter 7 of Think Python by Allen Downey).</p>
+
+<h3>Solution in Python</h3>
+
+<pre><code>import math
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        recurse = factorial(n-1)
+        result = n * recurse
+        return result
+
+def estimate_pi():
+    total = 0
+    k = 0
+    factor = 2 * math.sqrt(2) / 9801
+    keep_going = True
+    while keep_going == True:
+        numerator = float(factorial(4*k) * (1103 + 26390 * k))
+        denominator = float(factorial(k)**4) * 396**(4*k)
+        term = factor * float(numerator/denominator)
+        total += term
+        k += 1
+        if term &lt; 1e-15:
+            keep_going == False
+            print "Finished at iteration number", k
+            break
+    return 1 / total
+
+print estimate_pi()
+</code></pre>
+
+<h3>Solution in Ruby</h3>
+
+<pre><code>def factorial(n)
+  if n == 0
+    return 1
+  else
+    recurse = factorial(n-1)
+    result = n * recurse
+  end
+  return result
+end
+
+def estimate_pi
+  total = 0
+  k = 0
+  factor = 2 * Math.sqrt(2) / 9801
+  keep_going = true
+
+  while keep_going == true
+    numerator = (factorial(4*k).to_f * (1103 + 26390 * k).to_f)
+    denominator = (factorial(k).to_f**4) * 396**(4*k).to_f
+    term = factor.to_f * (numerator.to_f/denominator.to_f)
+    total += term
+    k += 1
+    puts term &lt; 1E-15
+
+    if term &lt; 1E-15
+      keep_going == false
+      puts "Finished at iteration number #{k}"
+      break
+    end
+
+  end
+  return 1 / total
+end
+
+puts estimate_pi()
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code>Finished at iteration number 3
+3.14159265359
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/06/ruby-globals-flashcard/">Ruby Flashcards: Globals in Ruby</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-06T11:58:00-04:00" pubdate data-updated="true">Sep 6<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Ruby Flashcards: Globals in Ruby</h2>
+
+<p>An <a href="https://github.com/anaerobeth/ruby-flashcard">flashcard app</a> to test your knowledge of Ruby global variables.</p>
+
+<p>Question pool based on terminologies from <a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html">Ruby QuickRef</a> from ZenSpider.com</p>
+
+<p>Outputs:</p>
+
+<pre><code>*** Test your knowledge of Ruby Globals!***
+Based on Ruby QuickRef from ZenSpider.com
+
+Q: The exception object passed to #raise
+A: $!
+Correct
+Do you want to continue? (Y/N):y
+
+Q: The status of the last executed child process. Read only. Thread local.
+A: $.
+Incorrect. The answer is: $?
+Do you want to continue? (Y/N):y
+
+Q: The current standard input.
+A: $stdin
+Correct
+Do you want to continue? (Y/N):n
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/05/chess-quote-bot/">Chess Quote Bot</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-05T15:58:00-04:00" pubdate data-updated="true">Sep 5<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Chess Quote Bot</p>
+
+<p>A <a href="https://github.com/anaerobeth/BSS_SMS_QuoteBot/blob/master/app.py">quote bot app</a> developed using Python, Flask and Twilio API.</p>
+
+<h2>Quotes from Chess Grandmasters</h2>
+
+<h3>Text 1-617-9936601 for an inspirational chess quote</h3>
+
+<pre><code>The beauty of a move lies not in its appearance but in the thought behind it.
+-  Aaron Nimzowitsch
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/04/rot13-encryption-in-python-and-ruby/">ROT13 Encryption in Python and Ruby</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-04T15:58:00-04:00" pubdate data-updated="true">Sep 4<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>A program to encrypt a message in ROT13 by shifting a letter through the alphabet (an exercise from Chapter 8 of Think Python by Allen Downey)</p>
+
+<p>ASCII numbers
+  ord(&lsquo;a&rsquo;) => 97
+  ord(&lsquo;z&rsquo;) => 122
+  ord(&lsquo;A&rsquo;) = > 65
+  ord(&lsquo;Z&rsquo;) = > 90
+  chr(97) => &lsquo;a&rsquo;</p>
+
+<p>Key is the number of places the letters of the message should be moved during encryption</p>
+
+<h3>Solution in Python</h3>
+
+<pre><code>def rotate_word(message, key):
+    new_message = ''
+    s = message.lower()
+    for letter in s:
+        new_ord = key + ord(letter)
+        if new_ord &gt; 122:
+            new_ord = new_ord - 26
+            new_letter = chr(new_ord)
+        else:
+            new_letter = chr(new_ord)
+
+        new_message = new_message + new_letter
+    return new_message.lower()
+
+words = ['abc', 'python', 'ruby', 'unladen swallow']
+
+print "*** Messages encrypted in ROT13 ***"
+for word in words:
+    print "%s: %s" % (word, rotate_word(word, 13))
+</code></pre>
+
+<h3>Solution in Ruby</h3>
+
+<pre><code>def rotate_word(message, key)
+  new_message = ''
+  message.downcase!
+  message_array = message.split('')
+  message_array.each do |m|
+    new_ord = key + m[0].ord
+    if new_ord &gt; 122
+      new_ord = new_ord - 26
+      new_letter = new_ord.chr
+    else
+      new_letter = new_ord.chr
+    end
+    new_message = new_message + new_letter
+  end
+  return new_message.downcase
+end
+
+words = ['abc', 'python', 'ruby', 'unladen swallow']
+
+puts "*** Messages encrypted in ROT13 ***"
+words.each do |word|
+    puts "#{word}: #{rotate_word(word, 13)}"
+end
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code>*** Messages encrypted in ROT13 ***
+abc: nop
+python: clguba
+ruby: ehol
+unladen swallow: haynqra-fjnyybj
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/03/sublime-text-pro-tips/">Sublime Text 2 Pro Tip: Multiple Cursors</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-03T11:58:00-04:00" pubdate data-updated="true">Sep 3<span>rd</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Learn about Multiple Cursors and other pro tips from the article <a href="http://www.webdesignermag.co.uk/inspiration/10-must-know-sublime-text-2-tips/">10 Must-know Sublime Text 2 tips</a>.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/02/palindrome-checker-in-python-and-ruby/">Palindrome Checker in Python and Ruby</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-02T09:18:00-04:00" pubdate data-updated="true">Sep 2<span>nd</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Write a function that takes a string argument and returns
+True if it is a palindrome and False otherwise (an exercise from Chapter 6 of Think Python by Allen Downey).</p>
+
+<h3>Solution in Python</h3>
+
+<pre><code>def first(word):
+    return word[0]
+
+def last(word):
+    return word[-1]
+
+def middle(word):
+    return word[1:-1]
+
+def is_palindrome(word):
+    if len(word) &lt;=1:
+        return True
+    if first(word) != last(word):
+        return False
+    return is_palindrome(middle(word))
+
+words = ['cat', 'noon', 'radar', 'swallows', 'racecar']
+
+for word in words:
+  print '%s: %s' % (word, is_palindrome(word))
+</code></pre>
+
+<h3>Solution in Ruby</h3>
+
+<pre><code>def first_letter(word)
+  word[0]
+end
+
+def last_letter(word)
+  word[-1]
+end
+
+def middle(word)
+  word.byteslice(1..-2)
+end
+
+def is_palindrome?(word)
+  if word.length &lt;= 1
+    return 'True'
+  elsif first_letter(word) != last_letter(word)
+    return 'False'
+  else
+    return is_palindrome?(middle(word))
+  end
+end
+
+puts "Palindrome Detector"
+
+array = %w[cat noon radar swallows racecar]
+array.each do |word|
+  puts "#{word}: #{is_palindrome?(word)}"
+end
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code>Palindrome Detector
+cat: False
+noon: True
+radar: True
+swallows: False
+racecar: True
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/29/big-data-is-watching-you/">Big Data Is Watching You</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-29T15:52:00-04:00" pubdate data-updated="true">Aug 29<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>BBC UK weighs in on how <a href="http://www.bbc.co.uk/news/technology-23253949">building a digital copy of our physical world</a> can have profound consequences on how we live:</p>
+
+<blockquote><h2>Tomorrow&rsquo;s cities: How big data is changing the world</h2>
+
+<p>Nick Pickles, director of privacy campaign group Big Brother Watch, agrees that big data could become just another word for Big Brother. &ldquo;The core functionality of a smart city requires a vast amount data to be collected on every aspect of our lives every minute of every day. The question is how does that data get used? And it doesn&rsquo;t require a huge amount of imagination to see how it could be used to monitor people in a very real Big Brother way.&rdquo;</p>
+
+<p>&ldquo;At present the control of information is being taken away from citizens, and companies providing services are rushing to find ways of generating revenue from the data they hold. The danger is that when smart cities become a reality, individuals will not be able to control the ways they are monitored or what happens to the information, which is exactly the opposite of how it should be.&rdquo;</p>
+
+<p>The issue has huge implications for society and is going to need serious debate, Dr Ratti believes.</p></blockquote>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/09/08/all-the-buzz-about-fizzbuzz/">All the Buzz About Fizzbuzz</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/07/pi-approximation-in-python-and-ruby/">Pi Approximation in Python and Ruby</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/06/ruby-globals-flashcard/">Ruby Flashcards: Globals in Ruby</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/05/chess-quote-bot/">Chess Quote Bot</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/04/rot13-encryption-in-python-and-ruby/">ROT13 Encryption in Python and Ruby</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Beth Tenorio -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
