@@ -2,4 +2,4 @@ anaerobeth.github.io
 ====================
 ## Waiting for Singularity
 
-###Thoughts on science, tech and other preoccupations
+#### Thoughts on science, tech and other preoccupations
