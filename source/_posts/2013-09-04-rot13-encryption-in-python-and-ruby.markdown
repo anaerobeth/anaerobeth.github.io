@@ -9,11 +9,12 @@ categories:
 A program to encrypt a message in ROT13 by shifting a letter through the alphabet (an exercise from Chapter 8 of Think Python by Allen Downey)
 
 ASCII numbers
-ord('a') => 97
-ord('z') => 122
-ord('A') = > 65
-ord('Z') = > 90
-chr(97) => 'a'
+  ord('a') => 97
+  ord('z') => 122
+  ord('A') = > 65
+  ord('Z') = > 90
+  chr(97) => 'a'
+
 Key is the number of places the letters of the message should be moved during encryption
 
 ### Solution in Python
