@@ -4,7 +4,7 @@
   <title><![CDATA[Waiting for Singularity]]></title>
   <link href="http://anaerobeth.github.io/atom.xml" rel="self"/>
   <link href="http://anaerobeth.github.io/"/>
-  <updated>2013-09-08T15:52:00-04:00</updated>
+  <updated>2013-09-08T15:55:32-04:00</updated>
   <id>http://anaerobeth.github.io/</id>
   <author>
     <name><![CDATA[Beth Tenorio]]></name>
@@ -92,26 +92,26 @@ via http://jakespurlock.com/2012/11/php-fizzbuzz-test/ tested on PHP 5
 <tbody>
 <tr>
 <td>Ruby </td>
-<td> ksk 50 </td>
+<td> ksk </td>
+<td> 50 </td>
 <td> 0.0162 </td>
 <td> 11/02/15 </td>
-<td> 00:33:41 </td>
 <td> 0B / 25B / 24B</td>
 </tr>
 <tr>
 <td>Perl </td>
-<td> shmem 48 </td>
+<td> shmem </td>
+<td> 48 </td>
 <td> 0.0918 </td>
 <td> 07/03/02 </td>
-<td> 03:15:54 </td>
 <td> 0B / 22B / 25B</td>
 </tr>
 <tr>
 <td>Python </td>
-<td> Defenestrator 56 </td>
+<td> Defenestrator </td>
+<td> 56 </td>
 <td> 0.1151 </td>
 <td> 07/04/20 </td>
-<td> 06:07:37 </td>
 <td> 0B / 35B / 20B</td>
 </tr>
 <tr>
@@ -120,7 +120,7 @@ via http://jakespurlock.com/2012/11/php-fizzbuzz-test/ tested on PHP 5
 <td> 77 </td>
 <td> 2.7364 </td>
 <td> 11/06/01 </td>
-<td> 17:38:52 | 0B / 47B / 24B</td>
+<td> 0B / 47B / 24B</td>
 </tr>
 <tr>
 <td>JavaScript </td>
@@ -128,7 +128,7 @@ via http://jakespurlock.com/2012/11/php-fizzbuzz-test/ tested on PHP 5
 <td> 56 </td>
 <td> 0.0450 </td>
 <td> 07/02/25 </td>
-<td> 11:49:44 | 0B / 30B / 26B</td>
+<td> 0B / 30B / 26B</td>
 </tr>
 <tr>
 <td>AWK </td>
@@ -136,7 +136,7 @@ via http://jakespurlock.com/2012/11/php-fizzbuzz-test/ tested on PHP 5
 <td> 57 </td>
 <td> 0.0024 </td>
 <td> 08/10/27 </td>
-<td> 18:16:48 | 0B / 32B / 24B</td>
+<td> 0B / 32B / 24B</td>
 </tr>
 <tr>
 <td>Bash </td>
@@ -144,14 +144,14 @@ via http://jakespurlock.com/2012/11/php-fizzbuzz-test/ tested on PHP 5
 <td> 41 </td>
 <td> 0.0152 </td>
 <td> 11/02/26 </td>
-<td> 19:02:54 | 0B / ?B / ?B</td>
+<td> 0B / ?B / ?B</td>
 </tr>
 <tr>
 <td>Scala </td>
-<td> lyrical_logical 66 </td>
+<td> lyrical_logical </td>
+<td> 66 </td>
 <td> 7.8083 </td>
 <td> 11/07/12 </td>
-<td> 02:19:22 </td>
 <td> 0B / 36B / 29B</td>
 </tr>
 </tbody>
