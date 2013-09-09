@@ -4,7 +4,7 @@
   <title><![CDATA[Waiting for Singularity]]></title>
   <link href="http://anaerobeth.github.io/atom.xml" rel="self"/>
   <link href="http://anaerobeth.github.io/"/>
-  <updated>2013-09-08T15:57:52-04:00</updated>
+  <updated>2013-09-09T15:41:15-04:00</updated>
   <id>http://anaerobeth.github.io/</id>
   <author>
     <name><![CDATA[Beth Tenorio]]></name>
@@ -12,6 +12,40 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Regex Flashcards]]></title>
+    <link href="http://anaerobeth.github.io/blog/2013/09/09/regex-flashcard/"/>
+    <updated>2013-09-09T11:58:00-04:00</updated>
+    <id>http://anaerobeth.github.io/blog/2013/09/09/regex-flashcard</id>
+    <content type="html"><![CDATA[<h2>Regular Expressions Flashcards</h2>
+
+<p>An <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/regex-flashcards.rb">flashcard app</a> to test your knowledge of regular expressions.</p>
+
+<p>Question pool based on terminologies from <a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html">Ruby QuickRef</a> from ZenSpider.com</p>
+
+<p>Outputs:</p>
+
+<pre><code>    *** Test your knowledge of Regular Expressions***
+    Based on Ruby QuickRef from ZenSpider.com
+
+    Q: non-word boundary
+    A: \B
+    Correct
+    Do you want to continue? (Y/N):y
+
+    Q: 0 or more previous regular expression (non-greedy)
+    A: .
+    Incorrect. The answer is: *?
+    Do you want to continue? (Y/N):
+
+    Q: 0 or more previous regular expression
+    A: *
+    Correct
+    Do you want to continue? (Y/N):n
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[All the buzz about Fizzbuzz]]></title>
