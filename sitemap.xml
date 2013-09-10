@@ -37,12 +37,18 @@
         <lastmod>2013-09-07T15:41:58-04:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://anaerobeth.github.io/blog/2013/09/10/pi-approximation-in-python-and-ruby/
+        </loc>
+        <lastmod>2013-09-10T15:09:16-04:00</lastmod>
+    </url>
+    <url>
         <loc>http://anaerobeth.github.io/blog/archives/</loc>
-        <lastmod>2013-09-08T15:57:38-04:00</lastmod>
+        <lastmod>2013-09-10T15:09:16-04:00</lastmod>
     </url>
     <url>
         <loc>http://anaerobeth.github.io/</loc>
-        <lastmod>2013-09-08T15:57:38-04:00</lastmod>
+        <lastmod>2013-09-10T15:09:16-04:00</lastmod>
     </url>
     <url>
         <loc>http://anaerobeth.github.io/robots.txt</loc>

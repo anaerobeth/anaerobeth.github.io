@@ -4,7 +4,7 @@
   <title><![CDATA[Waiting for Singularity]]></title>
   <link href="http://anaerobeth.github.io/atom.xml" rel="self"/>
   <link href="http://anaerobeth.github.io/"/>
-  <updated>2013-09-09T15:41:15-04:00</updated>
+  <updated>2013-09-10T15:10:19-04:00</updated>
   <id>http://anaerobeth.github.io/</id>
   <author>
     <name><![CDATA[Beth Tenorio]]></name>
@@ -12,6 +12,94 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Pi Approximation in Python and Ruby]]></title>
+    <link href="http://anaerobeth.github.io/blog/2013/09/10/pi-approximation-in-python-and-ruby/"/>
+    <updated>2013-09-10T17:58:00-04:00</updated>
+    <id>http://anaerobeth.github.io/blog/2013/09/10/pi-approximation-in-python-and-ruby</id>
+    <content type="html"><![CDATA[<p>In 1910, the mathematician Srinivasa Ramanujan found several rapidly converging infinite series that can be used to generate <a href="http://en.wikipedia.org/wiki/Srinivasa_Ramanujan#Mathematical_achievements">a numerical approximation of pi</a>. His series are now the basis for the fastest algorithms currently used to calculate π.</p>
+
+<p>Below are implementations of a function called estimate_pi that uses his formula to compute and return an estimate of pi(an exercise from Chapter 7 of Think Python by Allen Downey).</p>
+
+<h3>Solution in Python</h3>
+
+<pre><code>import math
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        recurse = factorial(n-1)
+        result = n * recurse
+        return result
+
+def estimate_pi():
+    total = 0
+    k = 0
+    factor = 2 * math.sqrt(2) / 9801
+    keep_going = True
+    while keep_going == True:
+        numerator = float(factorial(4*k) * (1103 + 26390 * k))
+        denominator = float(factorial(k)**4) * 396**(4*k)
+        term = factor * float(numerator/denominator)
+        total += term
+        k += 1
+        if term &lt; 1e-15:
+            keep_going == False
+            print "Finished at iteration number", k
+            break
+    return 1 / total
+
+print estimate_pi()
+</code></pre>
+
+<h3>Solution in Ruby</h3>
+
+<pre><code>def factorial(n)
+  if n == 0
+    return 1
+  else
+    recurse = factorial(n-1)
+    result = n * recurse
+  end
+  return result
+end
+
+def estimate_pi
+  total = 0
+  k = 0
+  factor = 2 * Math.sqrt(2) / 9801
+  keep_going = true
+
+  while keep_going == true
+    numerator = (factorial(4*k).to_f * (1103 + 26390 * k).to_f)
+    denominator = (factorial(k).to_f**4) * 396**(4*k).to_f
+    term = factor.to_f * (numerator.to_f/denominator.to_f)
+    total += term
+    k += 1
+    puts term &lt; 1E-15
+
+    if term &lt; 1E-15
+      keep_going == false
+      puts "Finished at iteration number #{k}"
+      break
+    end
+
+  end
+  return 1 / total
+end
+
+puts estimate_pi()
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code>Finished at iteration number 3
+3.14159265359
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Regex Flashcards]]></title>
