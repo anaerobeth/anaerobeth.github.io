@@ -4,7 +4,7 @@
   <title><![CDATA[Waiting for Singularity]]></title>
   <link href="http://anaerobeth.github.io/atom.xml" rel="self"/>
   <link href="http://anaerobeth.github.io/"/>
-  <updated>2013-09-15T22:42:57-04:00</updated>
+  <updated>2013-09-16T15:29:49-04:00</updated>
   <id>http://anaerobeth.github.io/</id>
   <author>
     <name><![CDATA[Beth Tenorio]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[]]></title>
+    <link href="http://anaerobeth.github.io/blog/2013/09/16/brains-in-jars/"/>
+    <updated>2013-09-16T15:58:00-04:00</updated>
+    <id>http://anaerobeth.github.io/blog/2013/09/16/brains-in-jars</id>
+    <content type="html"><![CDATA[<p>** Brains in Jars!</p>
+
+<p>Singularity Hub describes how scientists grew miniature, but distinctly human, <a href="http://singularityhub.com/2013/08/30/scientists-grow-miniature-but-distinctly-human-brain-in-the-lab/">brain in the lab</a></p>
+
+<blockquote><p>Austrian researchers have used regenerative techniques to grow a miniature human brain in the lab, they reported recently in the journal Nature.</p>
+
+<p>The researchers started with pluripotent human stem cells, or stem cells that are capable of developing into various kinds of specialized cell. After letting them develop, they removed proto-neural cells and placed them on a scaffold. Using a bioreactor to improve cellular growing conditions, they obtained a brain-like organ that exhibited differentiated brain regions.</p>
+
+<p>The mini-brains developed into distinct regions, including a cerebral cortex, retina (pictured), meninges and choroid plexus. But they stopped growing after two months. The Austrian researchers, led by Jurgen Knoblich of the Institute of Molecular Biotechnology of the Austrian Academy of Sciences, said that in the absence of a circulation system, the core of the mini-brains probably didn’t receive adequate nutrients or oxygen to continue growing.</p></blockquote>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Rake Tasks Flashcards]]></title>
