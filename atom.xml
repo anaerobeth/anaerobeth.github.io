@@ -4,7 +4,7 @@
   <title><![CDATA[Waiting for Singularity]]></title>
   <link href="http://anaerobeth.github.io/atom.xml" rel="self"/>
   <link href="http://anaerobeth.github.io/"/>
-  <updated>2013-09-10T15:10:19-04:00</updated>
+  <updated>2013-09-15T22:42:57-04:00</updated>
   <id>http://anaerobeth.github.io/</id>
   <author>
     <name><![CDATA[Beth Tenorio]]></name>
@@ -12,6 +12,37 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Rake Tasks Flashcards]]></title>
+    <link href="http://anaerobeth.github.io/blog/2013/09/12/rake-flashcard/"/>
+    <updated>2013-09-12T11:58:00-04:00</updated>
+    <id>http://anaerobeth.github.io/blog/2013/09/12/rake-flashcard</id>
+    <content type="html"><![CDATA[<h2>Rake Tasks Flashcards</h2>
+
+<p>An <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/rake-flashcards.rb">flashcard app</a> to test your knowledge of Rake tasks.</p>
+
+<p>Question pool based on terminologies from $ rake -T</p>
+
+<p>Outputs:</p>
+
+<pre><code>    Q: What rake task does the following: Run tests quickly by merging all types and not resetting db?
+    A: test:all
+    Correct
+    Do you want to continue? (Y/N): y
+
+    Q: What rake task does the following: Load the seed data from db/seeds.rb?
+    A: db:seed
+    Correct
+    Do you want to continue? (Y/N): y
+
+    Q: What rake task does the following: Run tests quickly by merging all types and not resetting db?
+    A: db:test
+    Incorrect. The answer is: test:all
+    Do you want to continue? (Y/N): n
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Pi Approximation in Python and Ruby]]></title>

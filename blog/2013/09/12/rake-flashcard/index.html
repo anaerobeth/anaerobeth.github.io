@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Pi Approximation in Python and Ruby - Waiting for Singularity</title>
+  <title>Rake Tasks Flashcards - Waiting for Singularity</title>
   <meta name="author" content="Beth Tenorio">
 
   
-  <meta name="description" content="In 1910, the mathematician Srinivasa Ramanujan found several rapidly converging infinite series that can be used to generate a numerical &hellip;">
+  <meta name="description" content="Rake Tasks Flashcards An flashcard app to test your knowledge of Rake tasks. Question pool based on terminologies from $ rake -T Outputs: Q: What &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://anaerobeth.github.io/blog/2013/09/10/pi-approximation-in-python-and-ruby">
+  <link rel="canonical" href="http://anaerobeth.github.io/blog/2013/09/12/rake-flashcard">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Waiting for Singularity" type="application/atom+xml">
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Pi Approximation in Python and Ruby</h1>
+      <h1 class="entry-title">Rake Tasks Flashcards</h1>
     
     
       <p class="meta">
@@ -84,92 +84,35 @@
   
 
 
-<time datetime="2013-09-10T17:58:00-04:00" pubdate data-updated="true">Sep 10<span>th</span>, 2013</time>
+<time datetime="2013-09-12T11:58:00-04:00" pubdate data-updated="true">Sep 12<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>In 1910, the mathematician Srinivasa Ramanujan found several rapidly converging infinite series that can be used to generate <a href="http://en.wikipedia.org/wiki/Srinivasa_Ramanujan#Mathematical_achievements">a numerical approximation of pi</a>. His series are now the basis for the fastest algorithms currently used to calculate π.</p>
+<div class="entry-content"><h2>Rake Tasks Flashcards</h2>
 
-<p>Below are implementations of a function called estimate_pi that uses his formula to compute and return an estimate of pi(an exercise from Chapter 7 of Think Python by Allen Downey).</p>
+<p>An <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/rake-flashcards.rb">flashcard app</a> to test your knowledge of Rake tasks.</p>
 
-<h3>Solution in Python</h3>
-
-<pre><code>import math
-
-def factorial(n):
-    if n == 0:
-        return 1
-    else:
-        recurse = factorial(n-1)
-        result = n * recurse
-        return result
-
-def estimate_pi():
-    total = 0
-    k = 0
-    factor = 2 * math.sqrt(2) / 9801
-    keep_going = True
-    while keep_going == True:
-        numerator = float(factorial(4*k) * (1103 + 26390 * k))
-        denominator = float(factorial(k)**4) * 396**(4*k)
-        term = factor * float(numerator/denominator)
-        total += term
-        k += 1
-        if term &lt; 1e-15:
-            keep_going == False
-            print "Finished at iteration number", k
-            break
-    return 1 / total
-
-print estimate_pi()
-</code></pre>
-
-<h3>Solution in Ruby</h3>
-
-<pre><code>def factorial(n)
-  if n == 0
-    return 1
-  else
-    recurse = factorial(n-1)
-    result = n * recurse
-  end
-  return result
-end
-
-def estimate_pi
-  total = 0
-  k = 0
-  factor = 2 * Math.sqrt(2) / 9801
-  keep_going = true
-
-  while keep_going == true
-    numerator = (factorial(4*k).to_f * (1103 + 26390 * k).to_f)
-    denominator = (factorial(k).to_f**4) * 396**(4*k).to_f
-    term = factor.to_f * (numerator.to_f/denominator.to_f)
-    total += term
-    k += 1
-    puts term &lt; 1E-15
-
-    if term &lt; 1E-15
-      keep_going == false
-      puts "Finished at iteration number #{k}"
-      break
-    end
-
-  end
-  return 1 / total
-end
-
-puts estimate_pi()
-</code></pre>
+<p>Question pool based on terminologies from $ rake -T</p>
 
 <p>Outputs:</p>
 
-<pre><code>Finished at iteration number 3
-3.14159265359
+<pre><code>    Q: What rake task does the following: Run tests quickly by merging all types and not resetting db?
+    A: test:all
+    Correct
+    Do you want to continue? (Y/N): y
+
+    Q: What rake task does the following: Load the seed data from db/seeds.rb?
+    A: db:seed
+    Correct
+    Do you want to continue? (Y/N): y
+
+    Q: What rake task does the following: Run tests quickly by merging all types and not resetting db?
+    A: db:test
+    Incorrect. The answer is: test:all
+    Do you want to continue? (Y/N): n
 </code></pre>
 </div>
 
@@ -193,7 +136,7 @@ puts estimate_pi()
   
 
 
-<time datetime="2013-09-10T17:58:00-04:00" pubdate data-updated="true">Sep 10<span>th</span>, 2013</time>
+<time datetime="2013-09-12T11:58:00-04:00" pubdate data-updated="true">Sep 12<span>th</span>, 2013</time>
       
 
 
@@ -201,7 +144,7 @@ puts estimate_pi()
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://anaerobeth.github.io/blog/2013/09/10/pi-approximation-in-python-and-ruby/" data-via="" data-counturl="http://anaerobeth.github.io/blog/2013/09/10/pi-approximation-in-python-and-ruby/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://anaerobeth.github.io/blog/2013/09/12/rake-flashcard/" data-via="" data-counturl="http://anaerobeth.github.io/blog/2013/09/12/rake-flashcard/" >Tweet</a>
   
   
   
@@ -210,10 +153,8 @@ puts estimate_pi()
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/09/09/regex-flashcard/" title="Previous Post: Regex Flashcards">&laquo; Regex Flashcards</a>
+        <a class="basic-alignment left" href="/blog/2013/09/10/pi-approximation-in-python-and-ruby/" title="Previous Post: Pi Approximation in Python and Ruby">&laquo; Pi Approximation in Python and Ruby</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/09/12/rake-flashcard/" title="Next Post: Rake Tasks Flashcards">Rake Tasks Flashcards &raquo;</a>
       
     </p>
   </footer>
