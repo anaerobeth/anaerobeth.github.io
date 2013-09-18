@@ -4,7 +4,7 @@
   <title><![CDATA[Waiting for Singularity]]></title>
   <link href="http://anaerobeth.github.io/atom.xml" rel="self"/>
   <link href="http://anaerobeth.github.io/"/>
-  <updated>2013-09-16T15:37:23-04:00</updated>
+  <updated>2013-09-17T21:59:50-04:00</updated>
   <id>http://anaerobeth.github.io/</id>
   <author>
     <name><![CDATA[Beth Tenorio]]></name>
@@ -14,11 +14,44 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Tmux Key Bindings Flashcards]]></title>
+    <link href="http://anaerobeth.github.io/blog/2013/09/18/tmux-flashcard/"/>
+    <updated>2013-09-18T11:58:00-04:00</updated>
+    <id>http://anaerobeth.github.io/blog/2013/09/18/tmux-flashcard</id>
+    <content type="html"><![CDATA[<h2>Tmux Key Binding Flashcards</h2>
+
+<p>An <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/tmux-flashcards.rb">flashcard app</a> to test your knowledge of Tmux key bindings.
+Question pool based on the Tmux manual pages from <a href="http://www.openbsd.org/.">http://www.openbsd.org/.</a></p>
+
+<p>Outputs:</p>
+
+<pre><code>*** Test your knowledge of Ruby Globals!***
+Based on the manual pages from http://www.openbsd.org/
+
+Q: What tmux key binding does the following: Force redraw of the attached client
+A: a
+Incorrect. The answer is: r
+Do you want to continue? (Y/N): y
+
+Q: What tmux key binding does the following: Break the current pane out of the window
+A: !
+Correct
+Do you want to continue? (Y/N): y
+
+Q: What tmux key binding does the following: Enter copy mode to copy text or view the history
+A: [
+Correct
+Do you want to continue? (Y/N): n
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Brains in Jars!]]></title>
     <link href="http://anaerobeth.github.io/blog/2013/09/16/brains-in-jars/"/>
     <updated>2013-09-16T12:58:00-04:00</updated>
     <id>http://anaerobeth.github.io/blog/2013/09/16/brains-in-jars</id>
-    <content type="html"><![CDATA[<p>Singularity Hub describes how scientists grew miniature, but distinctly human, <a href="http://singularityhub.com/2013/08/30/scientists-grow-miniature-but-distinctly-human-brain-in-the-lab/">brain in the lab</a></p>
+    <content type="html"><![CDATA[<p>Singularity Hub describes how scientists grew miniature, but distinctly human, <a href="http://singularityhub.com/2013/08/30/scientists-grow-miniature-but-distinctly-human-brain-in-the-lab/">brain in the lab</a>.</p>
 
 <blockquote><p>Austrian researchers have used regenerative techniques to grow a miniature human brain in the lab, they reported recently in the journal Nature.</p>
 
@@ -66,7 +99,7 @@
     <id>http://anaerobeth.github.io/blog/2013/09/10/pi-approximation-in-python-and-ruby</id>
     <content type="html"><![CDATA[<p>In 1910, the mathematician Srinivasa Ramanujan found several rapidly converging infinite series that can be used to generate <a href="http://en.wikipedia.org/wiki/Srinivasa_Ramanujan#Mathematical_achievements">a numerical approximation of pi</a>. His series are now the basis for the fastest algorithms currently used to calculate π.</p>
 
-<p>Below are implementations of a function called estimate_pi that uses his formula to compute and return an estimate of pi(an exercise from Chapter 7 of Think Python by Allen Downey).</p>
+<p>Below are implementations of a function called estimate_pi that uses his formula to compute and return an estimate of pi (an exercise from Chapter 7 of Think Python by Allen Downey).</p>
 
 <h3>Solution in Python</h3>
 
