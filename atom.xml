@@ -4,7 +4,7 @@
   <title><![CDATA[Waiting for Singularity]]></title>
   <link href="http://anaerobeth.github.io/atom.xml" rel="self"/>
   <link href="http://anaerobeth.github.io/"/>
-  <updated>2013-09-17T21:59:50-04:00</updated>
+  <updated>2013-09-20T13:54:50-04:00</updated>
   <id>http://anaerobeth.github.io/</id>
   <author>
     <name><![CDATA[Beth Tenorio]]></name>
@@ -12,6 +12,58 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Lessons in Base64 encoding]]></title>
+    <link href="http://anaerobeth.github.io/blog/2013/09/20/lessons-in-base64-encoding/"/>
+    <updated>2013-09-20T13:54:00-04:00</updated>
+    <id>http://anaerobeth.github.io/blog/2013/09/20/lessons-in-base64-encoding</id>
+    <content type="html"><![CDATA[<h3>Lessons in Base64 encoding</h3>
+
+<p>A recent hackathon offered a sweet discount to developers who could crack the following encoded message:</p>
+
+<p>bmljZSBkZWNvZGluZyB5b3VuZyBwYWRhd2FuIFVzZSB5b3UgbXVzdCBsZWFybmVyIGZyZWUgdGlja2V0IGNvZGU6IEhBQ0tUQVNUSUM=</p>
+
+<p>The last character of the message is &ldquo;=&rdquo; which points us to the right direction.
+Base 64 encoding uses &ldquo;=&rdquo; as the character for padding</p>
+
+<p>According to Wikipedia:</p>
+
+<blockquote><p>Base64 encoding schemes are commonly used when there is a need to encode binary data that needs to be stored and transferred over media that are designed to deal with textual data.
+This is to ensure that the data remains intact without modification during transport.
+Base64 is commonly used in a number of applications including email via MIME, and storing complex data in XML.</p></blockquote>
+
+<p>Solution in Python</p>
+
+<pre><code>    &gt;&gt;&gt; import base64
+    &gt;&gt;&gt; coded_string = '''bmljZSBkZWNvZGluZyB5b3VuZyBwYWRhd2FuIFVzZSB5b3UgbXVzdCBsZWFybmVyIGZyZWUgdGlja2V0IGNvZGU6IEhBQ0tUQVNUSUM='''
+    &gt;&gt;&gt; base64.b64decode(coded_string)
+    'nice decoding young padawan Use you must learner free ticket code: HACKTASTIC'
+
+    To encode a message in Ruby: Base64.encode64(message)
+    Tested in Python 2.7.2
+</code></pre>
+
+<p>Solution in Ruby</p>
+
+<pre><code>    2.0.0-p247 :001 &gt; require 'base64'
+     =&gt; true 
+
+    2.0.0-p247 :002 &gt; coded_string = "bmljZSBkZWNvZGluZyB5b3VuZyBwYWRhd2FuIFVzZSB5b3UgbXVzdCBsZWFybmVyIGZyZWUgdGlja2V0IGNvZGU6IEhBQ0tUQVNUSUM="
+     =&gt; "bmljZSBkZWNvZGluZyB5b3VuZyBwYWRhd2FuIFVzZSB5b3UgbXVzdCBsZWFybmVyIGZyZWUgdGlja2V0IGNvZGU6IEhBQ0tUQVNUSUM=" 
+
+    2.0.0-p247 :005 &gt; puts Base64.decode64(coded_string)
+    nice decoding young padawan Use you must learner free ticket code: HACKTASTIC
+     =&gt; nil 
+
+
+    To encode a message in Python: base64.b64encode(message)
+    Tested in Ruby 2.0.0
+</code></pre>
+
+<p>More on Base64 encoding in <a href="http://stackoverflow.com/questions/3470546/python-base64-data-decode">StackOverflow</a> and <a href="http://ruby-doc.org/stdlib-2.0.0/libdoc/base64/rdoc/Base64.html">Ruby-doc</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Tmux Key Bindings Flashcards]]></title>
@@ -368,9 +420,7 @@ via http://jakespurlock.com/2012/11/php-fizzbuzz-test/ tested on PHP 5
     <link href="http://anaerobeth.github.io/blog/2013/09/06/ruby-globals-flashcard/"/>
     <updated>2013-09-06T11:58:00-04:00</updated>
     <id>http://anaerobeth.github.io/blog/2013/09/06/ruby-globals-flashcard</id>
-    <content type="html"><![CDATA[<h2>Ruby Flashcards: Globals in Ruby</h2>
-
-<p>An <a href="https://github.com/anaerobeth/ruby-flashcard">flashcard app</a> to test your knowledge of Ruby global variables.</p>
+    <content type="html"><![CDATA[<p>An <a href="https://github.com/anaerobeth/ruby-flashcard">flashcard app</a> to test your knowledge of Ruby global variables.</p>
 
 <p>Question pool based on terminologies from <a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html">Ruby QuickRef</a> from ZenSpider.com</p>
 

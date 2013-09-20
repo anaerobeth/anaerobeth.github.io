@@ -9,8 +9,7 @@
   <meta name="author" content="Beth Tenorio">
 
   
-  <meta name="description" content="Tmux Key Binding Flashcards An flashcard app to test your knowledge of Tmux key bindings.
-Question pool based on the Tmux manual pages from http:// &hellip;">
+  <meta name="description" content="Lessons in Base64 encoding A recent hackathon offered a sweet discount to developers who could crack the following encoded message: &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +65,85 @@ Question pool based on the Tmux manual pages from http:// &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/20/lessons-in-base64-encoding/">Lessons in Base64 Encoding</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-20T13:54:00-04:00" pubdate data-updated="true">Sep 20<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>Lessons in Base64 encoding</h3>
+
+<p>A recent hackathon offered a sweet discount to developers who could crack the following encoded message:</p>
+
+<p>bmljZSBkZWNvZGluZyB5b3VuZyBwYWRhd2FuIFVzZSB5b3UgbXVzdCBsZWFybmVyIGZyZWUgdGlja2V0IGNvZGU6IEhBQ0tUQVNUSUM=</p>
+
+<p>The last character of the message is &ldquo;=&rdquo; which points us to the right direction.
+Base 64 encoding uses &ldquo;=&rdquo; as the character for padding</p>
+
+<p>According to Wikipedia:</p>
+
+<blockquote><p>Base64 encoding schemes are commonly used when there is a need to encode binary data that needs to be stored and transferred over media that are designed to deal with textual data.
+This is to ensure that the data remains intact without modification during transport.
+Base64 is commonly used in a number of applications including email via MIME, and storing complex data in XML.</p></blockquote>
+
+<p>Solution in Python</p>
+
+<pre><code>    &gt;&gt;&gt; import base64
+    &gt;&gt;&gt; coded_string = '''bmljZSBkZWNvZGluZyB5b3VuZyBwYWRhd2FuIFVzZSB5b3UgbXVzdCBsZWFybmVyIGZyZWUgdGlja2V0IGNvZGU6IEhBQ0tUQVNUSUM='''
+    &gt;&gt;&gt; base64.b64decode(coded_string)
+    'nice decoding young padawan Use you must learner free ticket code: HACKTASTIC'
+
+    To encode a message in Ruby: Base64.encode64(message)
+    Tested in Python 2.7.2
+</code></pre>
+
+<p>Solution in Ruby</p>
+
+<pre><code>    2.0.0-p247 :001 &gt; require 'base64'
+     =&gt; true 
+
+    2.0.0-p247 :002 &gt; coded_string = "bmljZSBkZWNvZGluZyB5b3VuZyBwYWRhd2FuIFVzZSB5b3UgbXVzdCBsZWFybmVyIGZyZWUgdGlja2V0IGNvZGU6IEhBQ0tUQVNUSUM="
+     =&gt; "bmljZSBkZWNvZGluZyB5b3VuZyBwYWRhd2FuIFVzZSB5b3UgbXVzdCBsZWFybmVyIGZyZWUgdGlja2V0IGNvZGU6IEhBQ0tUQVNUSUM=" 
+
+    2.0.0-p247 :005 &gt; puts Base64.decode64(coded_string)
+    nice decoding young padawan Use you must learner free ticket code: HACKTASTIC
+     =&gt; nil 
+
+
+    To encode a message in Python: base64.b64encode(message)
+    Tested in Ruby 2.0.0
+</code></pre>
+
+<p>More on Base64 encoding in <a href="http://stackoverflow.com/questions/3470546/python-base64-data-decode">StackOverflow</a> and <a href="http://ruby-doc.org/stdlib-2.0.0/libdoc/base64/rdoc/Base64.html">Ruby-doc</a>.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -607,9 +685,7 @@ via http://jakespurlock.com/2012/11/php-fizzbuzz-test/ tested on PHP 5
   </header>
 
 
-  <div class="entry-content"><h2>Ruby Flashcards: Globals in Ruby</h2>
-
-<p>An <a href="https://github.com/anaerobeth/ruby-flashcard">flashcard app</a> to test your knowledge of Ruby global variables.</p>
+  <div class="entry-content"><p>An <a href="https://github.com/anaerobeth/ruby-flashcard">flashcard app</a> to test your knowledge of Ruby global variables.</p>
 
 <p>Question pool based on terminologies from <a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html">Ruby QuickRef</a> from ZenSpider.com</p>
 
@@ -790,42 +866,6 @@ unladen swallow: haynqra-fjnyybj
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/03/sublime-text-pro-tips/">Sublime Text 2 Pro Tip: Multiple Cursors</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-03T11:58:00-04:00" pubdate data-updated="true">Sep 3<span>rd</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Learn about Multiple Cursors and other pro tips from the article <a href="http://www.webdesignermag.co.uk/inspiration/10-must-know-sublime-text-2-tips/">10 Must-know Sublime Text 2 tips</a>.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -841,6 +881,10 @@ unladen swallow: haynqra-fjnyybj
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/09/20/lessons-in-base64-encoding/">Lessons in Base64 Encoding</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/18/tmux-flashcard/">Tmux Key Bindings Flashcards</a>
       </li>
     
@@ -854,10 +898,6 @@ unladen swallow: haynqra-fjnyybj
     
       <li class="post">
         <a href="/blog/2013/09/10/pi-approximation-in-python-and-ruby/">Pi Approximation in Python and Ruby</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/09/regex-flashcard/">Regex Flashcards</a>
       </li>
     
   </ul>
