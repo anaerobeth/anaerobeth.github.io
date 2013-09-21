@@ -4,7 +4,7 @@
   <title><![CDATA[Waiting for Singularity]]></title>
   <link href="http://anaerobeth.github.io/atom.xml" rel="self"/>
   <link href="http://anaerobeth.github.io/"/>
-  <updated>2013-09-20T13:54:50-04:00</updated>
+  <updated>2013-09-20T23:12:31-04:00</updated>
   <id>http://anaerobeth.github.io/</id>
   <author>
     <name><![CDATA[Beth Tenorio]]></name>
@@ -14,15 +14,55 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Lessons in Base64 encoding]]></title>
+    <title type="html"><![CDATA[]]></title>
+    <link href="http://anaerobeth.github.io/blog/2013/09/21/git-adventures-1/"/>
+    <updated>2013-09-21T15:58:00-04:00</updated>
+    <id>http://anaerobeth.github.io/blog/2013/09/21/git-adventures-1</id>
+    <content type="html"><![CDATA[<ul>
+<li>How to fork a GitHub project</li>
+<li>Cloning a forked repository and its branches</li>
+<li>Updating a forked repository</li>
+</ul>
+
+
+<p>Scenario 1: I want to fork a project on GitHub to work on a feature in my local repository.</p>
+
+<pre><code>    Go to the prject page on GitHub, https://github.com/PROJECT_AUTHOR/PROJECT.git 
+    Click the "Fork" button
+    The project will be added to your list of repositories
+</code></pre>
+
+<p>Scenario 2: The Github repository has a branch called &ldquo;bananas&rdquo;. I want to copy that branch in my local repository.</p>
+
+<pre><code>    git fetch origin
+    git checkout --track origin/bananas
+</code></pre>
+
+<p>Scenario 3: A day later, another branch called &ldquo;cool-beans&rdquo; was added to the original project. I want to add that branch in my local repository as well.</p>
+
+<pre><code>    git remote add upstream https://github.com/PROJECT_AUTHOR/PROJECT.git
+    git fetch upstream
+    git checkout --track upstream/cool-beans
+</code></pre>
+
+<p>References:
+* <a href="https://help.github.com/articles/fork-a-repo">https://help.github.com/articles/fork-a-repo</a>
+* <a href="http://stackoverflow.com/questions/7244321/how-to-update-github-forked-repository?rq=1">http://stackoverflow.com/questions/7244321/how-to-update-github-forked-repository?rq=1</a>
+* <a href="http://stackoverflow.com/questions/2767605/after-i-fork-a-github-project-how-can-i-stay-current-with-the-original-project?rq=1">http://stackoverflow.com/questions/2767605/after-i-fork-a-github-project-how-can-i-stay-current-with-the-original-project?rq=1</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Decode This Message]]></title>
     <link href="http://anaerobeth.github.io/blog/2013/09/20/lessons-in-base64-encoding/"/>
     <updated>2013-09-20T13:54:00-04:00</updated>
     <id>http://anaerobeth.github.io/blog/2013/09/20/lessons-in-base64-encoding</id>
-    <content type="html"><![CDATA[<h3>Lessons in Base64 encoding</h3>
+    <content type="html"><![CDATA[<h3>A lesson in Base64 encoding</h3>
 
 <p>A recent hackathon offered a sweet discount to developers who could crack the following encoded message:</p>
 
-<p>bmljZSBkZWNvZGluZyB5b3VuZyBwYWRhd2FuIFVzZSB5b3UgbXVzdCBsZWFybmVyIGZyZWUgdGlja2V0IGNvZGU6IEhBQ0tUQVNUSUM=</p>
+<pre><code>    bmljZSBkZWNvZGluZyB5b3VuZyBwYWRhd2FuIFVzZSB5b3UgbXVzdCBsZWFybmVyIGZyZWUgdGlja2V0IGNvZGU6IEhBQ0tUQVNUSUM=
+</code></pre>
 
 <p>The last character of the message is &ldquo;=&rdquo; which points us to the right direction.
 Base 64 encoding uses &ldquo;=&rdquo; as the character for padding</p>
@@ -70,9 +110,7 @@ Base64 is commonly used in a number of applications including email via MIME, an
     <link href="http://anaerobeth.github.io/blog/2013/09/18/tmux-flashcard/"/>
     <updated>2013-09-18T11:58:00-04:00</updated>
     <id>http://anaerobeth.github.io/blog/2013/09/18/tmux-flashcard</id>
-    <content type="html"><![CDATA[<h2>Tmux Key Binding Flashcards</h2>
-
-<p>An <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/tmux-flashcards.rb">flashcard app</a> to test your knowledge of Tmux key bindings.
+    <content type="html"><![CDATA[<p>An <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/tmux-flashcards.rb">flashcard app</a> to test your knowledge of Tmux key bindings.
 Question pool based on the Tmux manual pages from <a href="http://www.openbsd.org/.">http://www.openbsd.org/.</a></p>
 
 <p>Outputs:</p>
@@ -118,11 +156,7 @@ Do you want to continue? (Y/N): n
     <link href="http://anaerobeth.github.io/blog/2013/09/12/rake-flashcard/"/>
     <updated>2013-09-12T11:58:00-04:00</updated>
     <id>http://anaerobeth.github.io/blog/2013/09/12/rake-flashcard</id>
-    <content type="html"><![CDATA[<h2>Rake Tasks Flashcards</h2>
-
-<p>An <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/rake-flashcards.rb">flashcard app</a> to test your knowledge of Rake tasks.</p>
-
-<p>Question pool based on terminologies from $ rake -T</p>
+    <content type="html"><![CDATA[<p>An <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/rake-flashcards.rb">flashcard app</a> to test your knowledge of Rake tasks.</p>
 
 <p>Outputs:</p>
 
@@ -140,6 +174,13 @@ Do you want to continue? (Y/N): n
     A: db:test
     Incorrect. The answer is: test:all
     Do you want to continue? (Y/N): n
+</code></pre>
+
+<p>Read about the humble beginnings of Rake in <a href="http://rake.rubyforge.org/files/doc/rational_rdoc.html">Rational.doc</a>.
+For a good introduction to Rake, head to <a href="http://jasonseifer.com/2010/04/06/rake-tutorial">Jason Seifer&rsquo;s blog</a>.</p>
+
+<pre><code>    "I never intended to write this code. I‘m not convinced it is useful, and I‘m not convinced anyone would even be interested in it."
+    -  Jim Weirich
 </code></pre>
 ]]></content>
   </entry>
@@ -233,13 +274,11 @@ puts estimate_pi()
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Regex Flashcards]]></title>
+    <title type="html"><![CDATA[Regular Expressions Flashcards]]></title>
     <link href="http://anaerobeth.github.io/blog/2013/09/09/regex-flashcard/"/>
     <updated>2013-09-09T11:58:00-04:00</updated>
     <id>http://anaerobeth.github.io/blog/2013/09/09/regex-flashcard</id>
-    <content type="html"><![CDATA[<h2>Regular Expressions Flashcards</h2>
-
-<p>An <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/regex-flashcards.rb">flashcard app</a> to test your knowledge of regular expressions.</p>
+    <content type="html"><![CDATA[<p>An <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/regex-flashcards.rb">flashcard app</a> to test your knowledge of regular expressions.</p>
 
 <p>Question pool based on terminologies from <a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html">Ruby QuickRef</a> from ZenSpider.com</p>
 
@@ -337,10 +376,10 @@ via http://jakespurlock.com/2012/11/php-fizzbuzz-test/ tested on PHP 5
 <thead>
 <tr>
 <th>Language </th>
-<th> User </th>
-<th> Size </th>
-<th> Time </th>
-<th> Date </th>
+<th>  User  </th>
+<th>   Size   </th>
+<th>   Time   </th>
+<th>   Date   </th>
 <th> Statistics</th>
 </tr>
 </thead>
@@ -452,9 +491,7 @@ Do you want to continue? (Y/N):n
     <link href="http://anaerobeth.github.io/blog/2013/09/05/chess-quote-bot/"/>
     <updated>2013-09-05T15:58:00-04:00</updated>
     <id>http://anaerobeth.github.io/blog/2013/09/05/chess-quote-bot</id>
-    <content type="html"><![CDATA[<p>Chess Quote Bot</p>
-
-<p>A <a href="https://github.com/anaerobeth/BSS_SMS_QuoteBot/blob/master/app.py">quote bot app</a> developed using Python, Flask and Twilio API.</p>
+    <content type="html"><![CDATA[<p>A <a href="https://github.com/anaerobeth/BSS_SMS_QuoteBot/blob/master/app.py">quote bot app</a> developed using Python, Flask and Twilio API.</p>
 
 <h2>Quotes from Chess Grandmasters</h2>
 
@@ -548,7 +585,12 @@ unladen swallow: haynqra-fjnyybj
     <link href="http://anaerobeth.github.io/blog/2013/09/03/sublime-text-pro-tips/"/>
     <updated>2013-09-03T11:58:00-04:00</updated>
     <id>http://anaerobeth.github.io/blog/2013/09/03/sublime-text-pro-tips</id>
-    <content type="html"><![CDATA[<p>Learn about Multiple Cursors and other pro tips from the article <a href="http://www.webdesignermag.co.uk/inspiration/10-must-know-sublime-text-2-tips/">10 Must-know Sublime Text 2 tips</a>.</p>
+    <content type="html"><![CDATA[<p>This Sublime Text 2 feature is a real-time saver:
+1. Place your cursor within the word and press Ctrl+Cmd+G.
+2. This selects every occurrence of that word and creates multiple cursors.
+3. Edit the word and watch the multiple cursors do the same.</p>
+
+<p>Learn about Multiple Cursors and other pro tips from the article <a href="http://www.webdesignermag.co.uk/inspiration/10-must-know-sublime-text-2-tips/">10 Must-know Sublime Text 2 tips</a>.</p>
 ]]></content>
   </entry>
   
