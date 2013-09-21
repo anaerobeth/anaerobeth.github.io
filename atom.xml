@@ -4,7 +4,7 @@
   <title><![CDATA[Waiting for Singularity]]></title>
   <link href="http://anaerobeth.github.io/atom.xml" rel="self"/>
   <link href="http://anaerobeth.github.io/"/>
-  <updated>2013-09-20T23:12:31-04:00</updated>
+  <updated>2013-09-20T23:16:13-04:00</updated>
   <id>http://anaerobeth.github.io/</id>
   <author>
     <name><![CDATA[Beth Tenorio]]></name>
@@ -46,9 +46,8 @@
 </code></pre>
 
 <p>References:
-* <a href="https://help.github.com/articles/fork-a-repo">https://help.github.com/articles/fork-a-repo</a>
-* <a href="http://stackoverflow.com/questions/7244321/how-to-update-github-forked-repository?rq=1">http://stackoverflow.com/questions/7244321/how-to-update-github-forked-repository?rq=1</a>
-* <a href="http://stackoverflow.com/questions/2767605/after-i-fork-a-github-project-how-can-i-stay-current-with-the-original-project?rq=1">http://stackoverflow.com/questions/2767605/after-i-fork-a-github-project-how-can-i-stay-current-with-the-original-project?rq=1</a></p>
+1. <a href="https://help.github.com/articles/fork-a-repo">GitHub article</a>
+2. StackOverflow discussions <a href="http://stackoverflow.com/questions/2767605/after-i-fork-a-github-project-how-can-i-stay-current-with-the-original-project?rq=1">here</a> and <a href="http://stackoverflow.com/questions/7244321/how-to-update-github-forked-repository?rq=1">here</a></p>
 ]]></content>
   </entry>
   
