@@ -4,7 +4,7 @@
   <title><![CDATA[Waiting for Singularity]]></title>
   <link href="http://anaerobeth.github.io/atom.xml" rel="self"/>
   <link href="http://anaerobeth.github.io/"/>
-  <updated>2013-09-20T23:17:08-04:00</updated>
+  <updated>2013-09-24T13:38:03-04:00</updated>
   <id>http://anaerobeth.github.io/</id>
   <author>
     <name><![CDATA[Beth Tenorio]]></name>
@@ -14,7 +14,41 @@
 
   
   <entry>
-    <title type="html"><![CDATA[]]></title>
+    <title type="html"><![CDATA[JavaScript Statements Flashcards]]></title>
+    <link href="http://anaerobeth.github.io/blog/2013/09/23/javascript-flashcard/"/>
+    <updated>2013-09-23T11:58:00-04:00</updated>
+    <id>http://anaerobeth.github.io/blog/2013/09/23/javascript-flashcard</id>
+    <content type="html"><![CDATA[<h2>JavaScript Flashcards</h2>
+
+<p>An <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/javascript-flashcards.rb">flashcard app</a> to test your knowledge of Tmux key bindings.
+Question pool based on documentation from the friendly folks at <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference">Mozilla Developer Network</a>.</p>
+
+<p>Outputs:</p>
+
+<pre><code>    *** Test your knowledge of JavaScript statements!***
+    Vocabulary based on vocabulary from Mozilla Developer Network
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
+
+    Q: Declares a read-only named constant.
+    A: const
+    Correct
+    Enter any key to continue or 'x' to exit: r
+
+    Q: Executes a statement if a specified condition is true. If the condition is false, another statement can be executed.
+    A: while
+    Incorrect. The answer is: if...else
+    Enter any key to continue or 'x' to exit: y
+
+    Q: A statement used to group zero or more statements and is delimited by a pair of curly brackets.
+    A: block
+    Correct
+    Enter any key to continue or 'x' to exit: x
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git Adventures - Part 1]]></title>
     <link href="http://anaerobeth.github.io/blog/2013/09/21/git-adventures-1/"/>
     <updated>2013-09-21T15:58:00-04:00</updated>
     <id>http://anaerobeth.github.io/blog/2013/09/21/git-adventures-1</id>
@@ -46,8 +80,8 @@
 </code></pre>
 
 <p>References:
-1. <a href="https://help.github.com/articles/fork-a-repo">GitHub article</a>
-2. StackOverflow discussions <a href="http://stackoverflow.com/questions/2767605/after-i-fork-a-github-project-how-can-i-stay-current-with-the-original-project?rq=1">here</a> and <a href="http://stackoverflow.com/questions/7244321/how-to-update-github-forked-repository?rq=1">here</a></p>
+<a href="https://help.github.com/articles/fork-a-repo">GitHub article</a>
+and StackOverflow discussions <a href="http://stackoverflow.com/questions/2767605/after-i-fork-a-github-project-how-can-i-stay-current-with-the-original-project?rq=1">here</a> and <a href="http://stackoverflow.com/questions/7244321/how-to-update-github-forked-repository?rq=1">here</a></p>
 ]]></content>
   </entry>
   
@@ -64,7 +98,7 @@
 </code></pre>
 
 <p>The last character of the message is &ldquo;=&rdquo; which points us to the right direction.
-Base 64 encoding uses &ldquo;=&rdquo; as the character for padding</p>
+Base64 encoding uses &ldquo;=&rdquo; as the character for padding</p>
 
 <p>According to Wikipedia:</p>
 

@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Palindrome checker in Python and Ruby - Waiting for Singularity</title>
+  <title>JavaScript Statements Flashcards - Waiting for Singularity</title>
   <meta name="author" content="Beth Tenorio">
 
   
-  <meta name="description" content="Write a function that takes a string argument and returns
-True if it is a palindrome and False otherwise (an exercise from Chapter 6 of Think Python &hellip;">
+  <meta name="description" content="JavaScript Flashcards An flashcard app to test your knowledge of Tmux key bindings.
+Question pool based on documentation from the friendly folks at &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@ True if it is a palindrome and False otherwise (an exercise from Chapter 6 of Th
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://anaerobeth.github.io/blog/2013/09/02/palindrome-checker-in-python-and-ruby">
+  <link rel="canonical" href="http://anaerobeth.github.io/blog/2013/09/23/javascript-flashcard">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Waiting for Singularity" type="application/atom+xml">
@@ -69,7 +69,7 @@ True if it is a palindrome and False otherwise (an exercise from Chapter 6 of Th
   
   <header>
     
-      <h1 class="entry-title">Palindrome Checker in Python and Ruby</h1>
+      <h1 class="entry-title">JavaScript Statements Flashcards</h1>
     
     
       <p class="meta">
@@ -85,80 +85,38 @@ True if it is a palindrome and False otherwise (an exercise from Chapter 6 of Th
   
 
 
-<time datetime="2013-09-02T09:18:00-04:00" pubdate data-updated="true">Sep 2<span>nd</span>, 2013</time>
+<time datetime="2013-09-23T11:58:00-04:00" pubdate data-updated="true">Sep 23<span>rd</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Write a function that takes a string argument and returns
-True if it is a palindrome and False otherwise (an exercise from Chapter 6 of Think Python by Allen Downey).</p>
+<div class="entry-content"><h2>JavaScript Flashcards</h2>
 
-<h3>Solution in Python</h3>
-
-<pre><code>def first(word):
-    return word[0]
-
-def last(word):
-    return word[-1]
-
-def middle(word):
-    return word[1:-1]
-
-def is_palindrome(word):
-    if len(word) &lt;=1:
-        return True
-    if first(word) != last(word):
-        return False
-    return is_palindrome(middle(word))
-
-words = ['cat', 'noon', 'radar', 'swallows', 'racecar']
-
-for word in words:
-  print '%s: %s' % (word, is_palindrome(word))
-</code></pre>
-
-<h3>Solution in Ruby</h3>
-
-<pre><code>def first_letter(word)
-  word[0]
-end
-
-def last_letter(word)
-  word[-1]
-end
-
-def middle(word)
-  word.byteslice(1..-2)
-end
-
-def is_palindrome?(word)
-  if word.length &lt;= 1
-    return 'True'
-  elsif first_letter(word) != last_letter(word)
-    return 'False'
-  else
-    return is_palindrome?(middle(word))
-  end
-end
-
-puts "Palindrome Detector"
-
-array = %w[cat noon radar swallows racecar]
-array.each do |word|
-  puts "#{word}: #{is_palindrome?(word)}"
-end
-</code></pre>
+<p>An <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/javascript-flashcards.rb">flashcard app</a> to test your knowledge of Tmux key bindings.
+Question pool based on documentation from the friendly folks at <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference">Mozilla Developer Network</a>.</p>
 
 <p>Outputs:</p>
 
-<pre><code>Palindrome Detector
-cat: False
-noon: True
-radar: True
-swallows: False
-racecar: True
+<pre><code>    *** Test your knowledge of JavaScript statements!***
+    Vocabulary based on vocabulary from Mozilla Developer Network
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
+
+    Q: Declares a read-only named constant.
+    A: const
+    Correct
+    Enter any key to continue or 'x' to exit: r
+
+    Q: Executes a statement if a specified condition is true. If the condition is false, another statement can be executed.
+    A: while
+    Incorrect. The answer is: if...else
+    Enter any key to continue or 'x' to exit: y
+
+    Q: A statement used to group zero or more statements and is delimited by a pair of curly brackets.
+    A: block
+    Correct
+    Enter any key to continue or 'x' to exit: x
 </code></pre>
 </div>
 
@@ -182,7 +140,7 @@ racecar: True
   
 
 
-<time datetime="2013-09-02T09:18:00-04:00" pubdate data-updated="true">Sep 2<span>nd</span>, 2013</time>
+<time datetime="2013-09-23T11:58:00-04:00" pubdate data-updated="true">Sep 23<span>rd</span>, 2013</time>
       
 
 
@@ -190,7 +148,7 @@ racecar: True
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://anaerobeth.github.io/blog/2013/09/02/palindrome-checker-in-python-and-ruby/" data-via="" data-counturl="http://anaerobeth.github.io/blog/2013/09/02/palindrome-checker-in-python-and-ruby/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://anaerobeth.github.io/blog/2013/09/23/javascript-flashcard/" data-via="" data-counturl="http://anaerobeth.github.io/blog/2013/09/23/javascript-flashcard/" >Tweet</a>
   
   
   
@@ -199,10 +157,8 @@ racecar: True
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/08/29/big-data-is-watching-you/" title="Previous Post: Big Data is watching you">&laquo; Big Data is watching you</a>
+        <a class="basic-alignment left" href="/blog/2013/09/21/git-adventures-1/" title="Previous Post: Git Adventures - Part 1">&laquo; Git Adventures - Part 1</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/09/03/sublime-text-pro-tips/" title="Next Post: Sublime Text 2 Pro Tip: Multiple Cursors ">Sublime Text 2 Pro Tip: Multiple Cursors  &raquo;</a>
       
     </p>
   </footer>
