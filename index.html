@@ -9,8 +9,8 @@
   <meta name="author" content="Beth Tenorio">
 
   
-  <meta name="description" content="An flashcard app to test your knowledge of JavaScript statements.
-Question pool based on documentation from the friendly folks at Mozilla Developer &hellip;">
+  <meta name="description" content="An flashcard app to test your knowledge of the JQuery API.
+Question pool based on documentation from jQuery API. Outputs: *** Test your knowledge of &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +66,65 @@ Question pool based on documentation from the friendly folks at Mozilla Develope
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/24/jquery-flashcard/">JQuery API Flashcards</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-24T13:58:00-04:00" pubdate data-updated="true">Sep 24<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>An <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/jquery-flashcards.rb">flashcard app</a> to test your knowledge of the JQuery API.
+Question pool based on documentation from  <a href="http://api.jquery.com/">jQuery API</a>.</p>
+
+<p>Outputs:</p>
+
+<pre><code>    *** Test your knowledge of jQuery API !***
+    Vocabulary based on jQuery API documentation
+    http://api.jquery.com/
+
+    Q: Selects the element that is the root of the document.
+    A: :root
+    Correct
+    Enter any key to continue or 'x' to exit: y
+
+    Q: Reduce the set of matched elements to the first in the set.
+    A: :first
+    Incorrect. The answer is: .first()
+    Enter any key to continue or 'x' to exit: 
+
+    Q: Selects all next elements matching "next" that are immediately preceded by a sibling "prev".
+    A: ("prev" &gt; "next")
+    Incorrect. The answer is: ("prev + next")
+    Enter any key to continue or 'x' to exit: x
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -782,65 +841,6 @@ via http://jakespurlock.com/2012/11/php-fizzbuzz-test/ tested on PHP 5
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/06/ruby-globals-flashcard/">Ruby Flashcards: Globals in Ruby</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-06T11:58:00-04:00" pubdate data-updated="true">Sep 6<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>An <a href="https://github.com/anaerobeth/ruby-flashcard">flashcard app</a> to test your knowledge of Ruby global variables.</p>
-
-<p>Question pool based on terminologies from <a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html">Ruby QuickRef</a> from ZenSpider.com</p>
-
-<p>Outputs:</p>
-
-<pre><code>*** Test your knowledge of Ruby Globals!***
-Based on Ruby QuickRef from ZenSpider.com
-
-Q: The exception object passed to #raise
-A: $!
-Correct
-Do you want to continue? (Y/N):y
-
-Q: The status of the last executed child process. Read only. Thread local.
-A: $.
-Incorrect. The answer is: $?
-Do you want to continue? (Y/N):y
-
-Q: The current standard input.
-A: $stdin
-Correct
-Do you want to continue? (Y/N):n
-</code></pre>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -856,6 +856,10 @@ Do you want to continue? (Y/N):n
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/09/24/jquery-flashcard/">JQuery API Flashcards</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/23/javascript-flashcard/">JavaScript Flashcards</a>
       </li>
     
@@ -869,10 +873,6 @@ Do you want to continue? (Y/N):n
     
       <li class="post">
         <a href="/blog/2013/09/18/tmux-flashcard/">Tmux Key Bindings Flashcards</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/16/brains-in-jars/">Brains in Jars!</a>
       </li>
     
   </ul>

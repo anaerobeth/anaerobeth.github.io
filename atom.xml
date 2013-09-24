@@ -4,7 +4,7 @@
   <title><![CDATA[Waiting for Singularity]]></title>
   <link href="http://anaerobeth.github.io/atom.xml" rel="self"/>
   <link href="http://anaerobeth.github.io/"/>
-  <updated>2013-09-24T13:46:47-04:00</updated>
+  <updated>2013-09-24T14:54:33-04:00</updated>
   <id>http://anaerobeth.github.io/</id>
   <author>
     <name><![CDATA[Beth Tenorio]]></name>
@@ -12,6 +12,38 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[JQuery API Flashcards]]></title>
+    <link href="http://anaerobeth.github.io/blog/2013/09/24/jquery-flashcard/"/>
+    <updated>2013-09-24T13:58:00-04:00</updated>
+    <id>http://anaerobeth.github.io/blog/2013/09/24/jquery-flashcard</id>
+    <content type="html"><![CDATA[<p>An <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/jquery-flashcards.rb">flashcard app</a> to test your knowledge of the JQuery API.
+Question pool based on documentation from  <a href="http://api.jquery.com/">jQuery API</a>.</p>
+
+<p>Outputs:</p>
+
+<pre><code>    *** Test your knowledge of jQuery API !***
+    Vocabulary based on jQuery API documentation
+    http://api.jquery.com/
+
+    Q: Selects the element that is the root of the document.
+    A: :root
+    Correct
+    Enter any key to continue or 'x' to exit: y
+
+    Q: Reduce the set of matched elements to the first in the set.
+    A: :first
+    Incorrect. The answer is: .first()
+    Enter any key to continue or 'x' to exit: 
+
+    Q: Selects all next elements matching "next" that are immediately preceded by a sibling "prev".
+    A: ("prev" &gt; "next")
+    Incorrect. The answer is: ("prev + next")
+    Enter any key to continue or 'x' to exit: x
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[JavaScript Flashcards]]></title>
