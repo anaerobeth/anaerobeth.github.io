@@ -97,7 +97,7 @@
 Given the sequence of a common sequencing primer, &ldquo;GCAATTAACCCTCACTAAAGG&rdquo;, I wrote a program to calculate the percentage of each nucleotide.
 For this, I chose <a href="https://www.ruby-lang.org/en/">Ruby</a>, a dynamic scripting language and <a href="http://rspec.info/">Rspec</a>, a testing tool for the Ruby language that uses simple language to describe expectations on how the code should work.</p>
 
-<p>Starting with a simple example that expresses some basic behaviour, for example <em>&lsquo;it counts the frequency of nucleotides in a string&rsquo;</em> and following TDD practices, I wrote a failing test, wrote just enough Ruby code to make it pass.
+<p>Starting with a simple example that expresses some basic behaviour, for example <em>&lsquo;it counts the frequency of nucleotides in a string&rsquo;</em> and following TDD best practices, I wrote a failing test then wrote just enough Ruby code to make it pass.
 I then improved the code, added another expected behavior and repeated the cycle. In TDD circles, this is known as Red-Green-Refactor. Primer sequences are typically 18-24 nucleotides, but for genes that are several thousand nucleotides in length, a script that automates the task of calculating DNA statistics can be quite powerful.</p>
 
 <p>Specs</p>
@@ -199,7 +199,7 @@ I then improved the code, added another expected behavior and repeated the cycle
     DNA statistics (21 residue sequence) A: 38.1% C: 28.6% G: 14.3% T: 19.0%
 </code></pre>
 
-<p>Future implementations of this code will include methods for determining melting temperature &trade; and detecting hairpin loops.</p>
+<p>Future implementations of this code will include methods for determining melting temperature, Tm and detecting hairpin loops.</p>
 
 <p>Got 15 minutes? Give Ruby a try now: <a href="http://tryruby.org/">Try Ruby</a>.
 Learn more about Ruby and Rspec <a href="https://www.ruby-lang.org/en/documentation/quickstart/">here</a> and <a href="https://peepcode.com/screencasts/rspec">here</a>.</p>
