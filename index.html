@@ -9,8 +9,7 @@
   <meta name="author" content="Beth Tenorio">
 
   
-  <meta name="description" content="An flashcard app to test your knowledge of the JQuery API.
-Question pool based on documentation from jQuery API. Outputs: *** Test your knowledge of &hellip;">
+  <meta name="description" content="Ruby for Biologists &ndash; Part 1 DNA sequence analysis is a basic task in molecular biology and is a good starting point for software development &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +65,148 @@ Question pool based on documentation from jQuery API. Outputs: *** Test your kno
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/24/ruby-for-biologists-1/">Applying TDD in Writing Bioinformatics Software</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-24T15:58:00-04:00" pubdate data-updated="true">Sep 24<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Ruby for Biologists &ndash; Part 1</p>
+
+<p>DNA sequence analysis is a basic task in molecular biology and is a good starting point for software development using Test Driven Development (TDD).
+Given the sequence of a common sequencing primer, &ldquo;GCAATTAACCCTCACTAAAGG&rdquo;, I wrote a program to calculate the percentage of each nucleotide.
+For this, I chose <a href="https://www.ruby-lang.org/en/">Ruby</a>, a dynamic scripting language and [Rspec](<a href="http://rspec.info/,">http://rspec.info/,</a> a testing tool for the Ruby language that uses simple language to describe expectations on how the code should work.
+Starting with a simple example that expresses some basic behaviour, for example it counts the frequency of nucleotides in a string&#8217; and following TDD practices, I wrote a failing test, wrote just enough Ruby code to make it pass.
+I then improved the code, added another expected behavior and repeated the cycle. In TDD circles, this is known as Red-Green-Refactor. Primer sequences are typically 18-24 nucleotides, but for genes that are several thousand nucleotides in length, a script that automates the task of calculating DNA statistics can be quite powerful.</p>
+
+<p>Specs</p>
+
+<pre><code>    # dna_stats_spec.rb
+
+    require 'rspec'
+
+    require_relative 'dna_stats'
+
+    describe 'Dna statistics' do
+      it 'counts the frequency of nucleotides in a string' do
+        expect(Dna.new('agccttaa').count).to eql([["a", 3], ["c", 2], ["g", 1], ["t", 2]])
+      end
+
+      it 'counts the frequency of nucleotides in a string' do
+        expect(Dna.new('nggaatncc').count).to eql([["a", 2], ["c", 2], ["g", 2], ["n", 2], ["t", 1]])
+      end
+
+      it 'analyzes the dna' do
+        expect(Dna.new('aaggcccttt').analyze).to eql([["a", 0.2], ["c", 0.3], ["g", 0.2], ["t", 0.3]])
+      end
+
+      it 'displays the dna statistics' do
+        expect(Dna.new('aaggcccttt').display).to eql("DNA statistics (10 residue sequence) A: 20.0% C: 30.0% G: 20.0% T: 30.0%")
+      end
+    end
+</code></pre>
+
+<p>Solution in Ruby</p>
+
+<pre><code>    # dna_stats.rb
+
+    class Dna
+
+      attr_reader :sequence, :sorted_array, :statistics, :string
+
+      def initialize(sequence)
+
+        @sequence = sequence
+        @sorted_array = []
+        @statistics = []
+        @string = ''
+      end
+
+
+      def count
+        hash = {}
+        sequence.each_char do | char |
+          hash[char] ? hash[char] &lt;&lt; char : hash[char] = [char]
+        end
+
+        hash.each do | key, value |
+          hash[key] = value.size.to_i
+        end
+        #binding.pry
+        @sorted_array = hash.sort
+        return @sorted_array
+
+      end
+
+      def analyze
+        @total_bases = 0
+        count
+        @sorted_array.each do | item |
+          @total_bases += item[1]
+        end
+        string &lt;&lt; "DNA statistics (#{@total_bases} residue sequence)"
+        @sorted_array.each do | item |
+          @statistics &lt;&lt; [item[0], (item[1].to_f / @total_bases)]
+        end
+        return @statistics
+      end
+
+      def display
+        analyze
+        @statistics.each do | item |
+          string &lt;&lt; " #{item[0].upcase}: #{(item[1]*100).round(1)}%"
+        end
+        return string
+      end
+    end
+
+    sequence = "GCAATTAACCCTCACTAAAGG"
+    puts "DNA sequence: " + sequence
+    seq = Dna.new(sequence)
+    puts seq.display
+</code></pre>
+
+<p>Output</p>
+
+<pre><code>    ruby-bio-suite $ ruby dna_statistics.rb
+
+    DNA sequence: GCAATTAACCCTCACTAAAGG
+    DNA statistics (21 residue sequence) A: 38.1% C: 28.6% G: 14.3% T: 19.0%
+</code></pre>
+
+<p>Future implementations of this code will include methods for determining melting temperature &trade; and detecting hairpin loops.</p>
+
+<p>Got 15 minutes? Give Ruby a try now: <a href="http://tryruby.org/">Try Ruby</a>.
+Learn more about Ruby and Rspec <a href="https://www.ruby-lang.org/en/documentation/quickstart/">here</a> and <a href="https://peepcode.com/screencasts/rspec">here</a>.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -286,7 +427,7 @@ and StackOverflow discussions <a href="http://stackoverflow.com/questions/276760
 </code></pre>
 
 <p>The last character of the message is &ldquo;=&rdquo; which points us to the right direction.
-Base64 encoding uses &ldquo;=&rdquo; as the character for padding</p>
+Base64 encoding uses &ldquo;=&rdquo; as the character for padding.</p>
 
 <p>According to Wikipedia:</p>
 
@@ -665,182 +806,6 @@ puts estimate_pi()
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/07/all-the-buzz-about-fizzbuzz/">All the Buzz About Fizzbuzz</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-07T15:12:00-04:00" pubdate data-updated="true">Sep 7<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Do companies still use <a href="http://c2.com/cgi/wiki?FizzBuzzTest">Fizzbuzz</a> to find programmers who can code?</h3>
-
-<p>The test may be <a href="http://imranontech.com/2007/01/24/using-fizzbuzz-to-find-developers-who-grok-coding/">old news</a> but FizzBuzz is still relevant.
-Some interesting observations: Global nerdy found that only <a href="http://www.globalnerdy.com/2012/11/15/fizzbuzz-still-works/">40% of the candidates</a> he interviewed could write FizzBuzz, LosTechies believe it provides <a href="http://lostechies.com/jimmybogard/2013/01/29/fizzbuzz-is-dead-long-live-fizzbuzz/">an accurate window into coding skills</a>, while <a href="http://rtigger.com/blog/2013/07/23/the-shortcomings-of-fizzbuzz">some engineers think it is plain boring</a>.</p>
-
-<p>StackExchange has suggestions on <a href="http://programmers.stackexchange.com/questions/152745/learn-programming-backwards-or-so-i-failed-the-fizzbuzz-test-now-what">what to do after you fail the test</a> in an interview.
-Resources:
-<a href="http://projecteuler.net/">Project Euler</a>
-<a href="http://www.ic.unicamp.br/~meidanis/courses/mc336/2009s2/prolog/problemas/index.html">99 Prolog Puzzles</a>
-<a href="http://www.topcoder.com/">TopCoder</a>
-<a href="https://code.google.com/codejam">Google Code Jam</a></p>
-
-<p>Find <a href="http://programmers.stackexchange.com/questions/756/where-can-i-find-programming-puzzles-and-challenges">more programming exercises</a> on StackExchange.</p>
-
-<h3>FizzBuzz test:</h3>
-
-<p>Write a program that prints out the numbers from 1 through 100, but…</p>
-
-<blockquote><p>For numbers that are multiples of 3, print “Fizz” instead of the number.
-For numbers that are multiples of 5, print “Buzz” instead of the number
-For numbers that are multiples of both 3 and 5, print “FizzBuzz” instead of the number.</p></blockquote>
-
-<h3>Shortest Fizzbuzz Scripts</h3>
-
-<p>Implemented in Python</p>
-
-<pre><code>for i in range(1,101):print"FizzBuzz"[i*i%3*4:8--i**4%5]or i
-for i in range(1,101):print"Fizz"*(i%3&lt;1)+"Buzz"*(i%5&lt;1)or i
-for x in range(100): print x%3/2*'Fizz'+x%5/4*'Buzz' or x+1
-
-via  http://koichitamura.blogspot.com/2009/05/python-fizzbuzz.html
-and tested on Python v2.7.2
-</code></pre>
-
-<p>Implemented in Ruby</p>
-
-<pre><code>(1..100).map{|n|puts"FizzBuzz#{n}"[n%3&lt;1?0:n%5&lt;1?4:8,n%15&lt;1?8:4]}
-1.upto(100){|i|p"FizzBuzz#{i}"[i%3&lt;1?0:i%5&lt;1?4:8,i%15&lt;1?8:4]}
-100.times{|i|p"FizzBuzz#{i}"[i%3&lt;1?0:i%5&lt;1?4:8,i%15&lt;1?8:4]}
-
-via http://golf.shinh.org/p.rb?FizzBuzz and tested on Ruby v2.0.0
-</code></pre>
-
-<p>Implemented in Perl</p>
-
-<pre><code>perl -le'print(($_%3?"":Fizz).($_%5?"":Buzz)or$_)for 1..100'
-perl -M5.01 -e 'say+(Fizz)[$_%3].(Buzz)[$_%5]||$_,for 1..100'
-
-via http://www.perlmonks.org/?node_id=602901 tested on v5.12.4
-</code></pre>
-
-<p>Implemented in PHP</p>
-
-<pre><code>while(++$i&lt;100)echo($i%15?$i%3?$i%5?$i:Buzz:Fizz:FizzBuzz)."\n";
-
-via http://jakespurlock.com/2012/11/php-fizzbuzz-test/ tested on PHP 5
-</code></pre>
-
-<h3>Statistics on Shortest FizzBuzz codes</h3>
-
-<p><a href="http://golf.shinh.org/p.rb?FizzBuzz">http://golf.shinh.org/p.rb?FizzBuzz</a></p>
-
-<table>
-<thead>
-<tr>
-<th>Language </th>
-<th>  User  </th>
-<th>   Size   </th>
-<th>   Time   </th>
-<th>   Date   </th>
-<th> Statistics</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Ruby </td>
-<td> ksk </td>
-<td> 50 </td>
-<td> 0.0162 </td>
-<td> 11/02/15 </td>
-<td> 0B / 25B / 24B</td>
-</tr>
-<tr>
-<td>Perl </td>
-<td> shmem </td>
-<td> 48 </td>
-<td> 0.0918 </td>
-<td> 07/03/02 </td>
-<td> 0B / 22B / 25B</td>
-</tr>
-<tr>
-<td>Python </td>
-<td> Defenestrator </td>
-<td> 56 </td>
-<td> 0.1151 </td>
-<td> 07/04/20 </td>
-<td> 0B / 35B / 20B</td>
-</tr>
-<tr>
-<td>Clojure </td>
-<td> youz </td>
-<td> 77 </td>
-<td> 2.7364 </td>
-<td> 11/06/01 </td>
-<td> 0B / 47B / 24B</td>
-</tr>
-<tr>
-<td>JavaScript </td>
-<td> ozy4dm </td>
-<td> 56 </td>
-<td> 0.0450 </td>
-<td> 07/02/25 </td>
-<td> 0B / 30B / 26B</td>
-</tr>
-<tr>
-<td>AWK </td>
-<td> nn </td>
-<td> 57 </td>
-<td> 0.0024 </td>
-<td> 08/10/27 </td>
-<td> 0B / 32B / 24B</td>
-</tr>
-<tr>
-<td>Bash </td>
-<td> daishi </td>
-<td> 41 </td>
-<td> 0.0152 </td>
-<td> 11/02/26 </td>
-<td> 0B / ?B / ?B</td>
-</tr>
-<tr>
-<td>Scala </td>
-<td> lyrical_logical </td>
-<td> 66 </td>
-<td> 7.8083 </td>
-<td> 11/07/12 </td>
-<td> 0B / 36B / 29B</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -856,6 +821,10 @@ via http://jakespurlock.com/2012/11/php-fizzbuzz-test/ tested on PHP 5
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/09/24/ruby-for-biologists-1/">Applying TDD in Writing Bioinformatics Software</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/24/jquery-flashcard/">JQuery API Flashcards</a>
       </li>
     
@@ -869,10 +838,6 @@ via http://jakespurlock.com/2012/11/php-fizzbuzz-test/ tested on PHP 5
     
       <li class="post">
         <a href="/blog/2013/09/20/lessons-in-base64-encoding/">Decode This Message</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/18/tmux-flashcard/">Tmux Key Bindings Flashcards</a>
       </li>
     
   </ul>
