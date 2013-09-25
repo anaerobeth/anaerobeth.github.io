@@ -4,7 +4,7 @@
   <title><![CDATA[Waiting for Singularity]]></title>
   <link href="http://anaerobeth.github.io/atom.xml" rel="self"/>
   <link href="http://anaerobeth.github.io/"/>
-  <updated>2013-09-24T16:15:02-04:00</updated>
+  <updated>2013-09-25T12:37:35-04:00</updated>
   <id>http://anaerobeth.github.io/</id>
   <author>
     <name><![CDATA[Beth Tenorio]]></name>
@@ -138,7 +138,7 @@ Learn more about Ruby and Rspec <a href="https://www.ruby-lang.org/en/documentat
     <link href="http://anaerobeth.github.io/blog/2013/09/24/jquery-flashcard/"/>
     <updated>2013-09-24T13:58:00-04:00</updated>
     <id>http://anaerobeth.github.io/blog/2013/09/24/jquery-flashcard</id>
-    <content type="html"><![CDATA[<p>An <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/jquery-flashcards.rb">flashcard app</a> to test your knowledge of the JQuery API.
+    <content type="html"><![CDATA[<p>A <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/jquery-flashcards.rb">flashcard app</a> to test your knowledge of the JQuery API.
 Question pool based on documentation from  <a href="http://api.jquery.com/">jQuery API</a>.</p>
 
 <p>Outputs:</p>
@@ -170,7 +170,7 @@ Question pool based on documentation from  <a href="http://api.jquery.com/">jQue
     <link href="http://anaerobeth.github.io/blog/2013/09/23/javascript-flashcard/"/>
     <updated>2013-09-23T11:58:00-04:00</updated>
     <id>http://anaerobeth.github.io/blog/2013/09/23/javascript-flashcard</id>
-    <content type="html"><![CDATA[<p>An <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/javascript-flashcards.rb">flashcard app</a> to test your knowledge of JavaScript statements.
+    <content type="html"><![CDATA[<p>A <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/javascript-flashcards.rb">flashcard app</a> to test your knowledge of JavaScript statements.
 Question pool based on documentation from the friendly folks at <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference">Mozilla Developer Network</a>.</p>
 
 <p>Outputs:</p>
@@ -293,7 +293,7 @@ Base64 is commonly used in a number of applications including email via MIME, an
     <link href="http://anaerobeth.github.io/blog/2013/09/18/tmux-flashcard/"/>
     <updated>2013-09-18T11:58:00-04:00</updated>
     <id>http://anaerobeth.github.io/blog/2013/09/18/tmux-flashcard</id>
-    <content type="html"><![CDATA[<p>An <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/tmux-flashcards.rb">flashcard app</a> to test your knowledge of Tmux key bindings.
+    <content type="html"><![CDATA[<p>A <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/tmux-flashcards.rb">flashcard app</a> to test your knowledge of Tmux key bindings.
 Question pool based on the Tmux manual pages from <a href="http://www.openbsd.org/.">http://www.openbsd.org/.</a></p>
 
 <p>Outputs:</p>
@@ -339,7 +339,7 @@ Do you want to continue? (Y/N): n
     <link href="http://anaerobeth.github.io/blog/2013/09/12/rake-flashcard/"/>
     <updated>2013-09-12T11:58:00-04:00</updated>
     <id>http://anaerobeth.github.io/blog/2013/09/12/rake-flashcard</id>
-    <content type="html"><![CDATA[<p>An <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/rake-flashcards.rb">flashcard app</a> to test your knowledge of Rake tasks.</p>
+    <content type="html"><![CDATA[<p>A <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/rake-flashcards.rb">flashcard app</a> to test your knowledge of Rake tasks.</p>
 
 <p>Outputs:</p>
 
@@ -461,7 +461,7 @@ puts estimate_pi()
     <link href="http://anaerobeth.github.io/blog/2013/09/09/regex-flashcard/"/>
     <updated>2013-09-09T11:58:00-04:00</updated>
     <id>http://anaerobeth.github.io/blog/2013/09/09/regex-flashcard</id>
-    <content type="html"><![CDATA[<p>An <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/regex-flashcards.rb">flashcard app</a> to test your knowledge of regular expressions.</p>
+    <content type="html"><![CDATA[<p>A <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/regex-flashcards.rb">flashcard app</a> to test your knowledge of regular expressions.</p>
 
 <p>Question pool based on terminologies from <a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html">Ruby QuickRef</a> from ZenSpider.com</p>
 
