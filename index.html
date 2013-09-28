@@ -9,7 +9,7 @@
   <meta name="author" content="Beth Tenorio">
 
   
-  <meta name="description" content="Ruby for Biologists &ndash; Part 1 DNA sequence analysis is a basic task in molecular biology and is a good starting point for software development &hellip;">
+  <meta name="description" content="&ldquo;21st Century motion control&rdquo; pretty much sums it up: &ldquo;Box&rdquo; explores the synthesis of real and digital space through &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,91 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/27/thinking-inside-the-box/">Thinking Inside the Box</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-27T21:31:00-04:00" pubdate data-updated="true">Sep 27<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class="embed-video-container"><iframe src="http://www.youtube.com/embed/lX6JcybgDFo "></iframe></div>
+
+
+<p>&ldquo;<a href="http://www.botndolly.com/box">21st Century motion control</a>&rdquo; pretty much sums it up:
+  &ldquo;Box&rdquo; explores the synthesis of real and digital space through projection-mapping on moving surfaces. The short film documents a live performance, captured entirely in camera. Bot &amp; Dolly produced this work to serve as both an artistic statement and technical demonstration. It is the culmination of multiple technologies, including large scale robotics, projection mapping, and software engineering. We believe this methodology has tremendous potential to radically transform theatrical presentations, and define new genres of expression.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/27/how-young-is-too-young-to-begin-coding/">How Young Is Too Young to Begin Coding?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-27T21:20:00-04:00" pubdate data-updated="true">Sep 27<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Children have a knack for learning new languages. Could it be true for programming languages as well?</p>
+
+<pre><code>J. Paul Gibson had read educational psychology that suggested it was futile to try to reach children who had yet to achieve literacy. But when he made experimental forays into classrooms of 5- and 6-year-olds, the kids grasped his lessons with surprising ease.
+
+With the help of a custom Java applet, he was able to get kindergartners to write a tic-tac-toe program, based on step-by-step rules the students formulated as a group. And using colored balls and string, he taught the kids how to create graph algorithms, an essential component of computer science. “We believe our work shows that you can start teaching computer science before students even know how to read and write,” Gibson (who now teaches in France) wrote in a 2012 paper.
+
+“Children aged from 5-11 have so much potential for learning about algorithms and computation that it would be a shame to wait until they are teenagers before we teach them the foundations.” That notion is still too radical for most educators. While a popular movement is afoot to teach children, including adolescents, to code—touted by the likes of Bill Gates and basketball star Chris Bosh—few people believe that kindergartners can learn how to bend machines to their will.
+</code></pre>
+
+<p>Read the full article on <a href="http://www.wired.com/opinion/2013/09/ap_code/">Wired</a>.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -637,180 +722,6 @@ For a good introduction to Rake, head to <a href="http://jasonseifer.com/2010/04
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/10/pi-approximation-in-python-and-ruby/">Pi Approximation in Python and Ruby</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-10T17:58:00-04:00" pubdate data-updated="true">Sep 10<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>In 1910, the mathematician Srinivasa Ramanujan found several rapidly converging infinite series that can be used to generate <a href="http://en.wikipedia.org/wiki/Srinivasa_Ramanujan#Mathematical_achievements">a numerical approximation of pi</a>. His series are now the basis for the fastest algorithms currently used to calculate π.</p>
-
-<p>Below are implementations of a function called estimate_pi that uses his formula to compute and return an estimate of pi (an exercise from Chapter 7 of Think Python by Allen Downey).</p>
-
-<h3>Solution in Python</h3>
-
-<pre><code>import math
-
-def factorial(n):
-    if n == 0:
-        return 1
-    else:
-        recurse = factorial(n-1)
-        result = n * recurse
-        return result
-
-def estimate_pi():
-    total = 0
-    k = 0
-    factor = 2 * math.sqrt(2) / 9801
-    keep_going = True
-    while keep_going == True:
-        numerator = float(factorial(4*k) * (1103 + 26390 * k))
-        denominator = float(factorial(k)**4) * 396**(4*k)
-        term = factor * float(numerator/denominator)
-        total += term
-        k += 1
-        if term &lt; 1e-15:
-            keep_going == False
-            print "Finished at iteration number", k
-            break
-    return 1 / total
-
-print estimate_pi()
-</code></pre>
-
-<h3>Solution in Ruby</h3>
-
-<pre><code>def factorial(n)
-  if n == 0
-    return 1
-  else
-    recurse = factorial(n-1)
-    result = n * recurse
-  end
-  return result
-end
-
-def estimate_pi
-  total = 0
-  k = 0
-  factor = 2 * Math.sqrt(2) / 9801
-  keep_going = true
-
-  while keep_going == true
-    numerator = (factorial(4*k).to_f * (1103 + 26390 * k).to_f)
-    denominator = (factorial(k).to_f**4) * 396**(4*k).to_f
-    term = factor.to_f * (numerator.to_f/denominator.to_f)
-    total += term
-    k += 1
-    puts term &lt; 1E-15
-
-    if term &lt; 1E-15
-      keep_going == false
-      puts "Finished at iteration number #{k}"
-      break
-    end
-
-  end
-  return 1 / total
-end
-
-puts estimate_pi()
-</code></pre>
-
-<p>Outputs:</p>
-
-<pre><code>Finished at iteration number 3
-3.14159265359
-</code></pre>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/09/regex-flashcard/">Regular Expressions Flashcards</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-09T11:58:00-04:00" pubdate data-updated="true">Sep 9<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>A <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/regex-flashcards.rb">flashcard app</a> to test your knowledge of regular expressions.</p>
-
-<p>Question pool based on terminologies from <a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html">Ruby QuickRef</a> from ZenSpider.com</p>
-
-<p>Outputs:</p>
-
-<pre><code>    *** Test your knowledge of Regular Expressions***
-    Based on Ruby QuickRef from ZenSpider.com
-
-    Q: non-word boundary
-    A: \B
-    Correct
-    Do you want to continue? (Y/N):y
-
-    Q: 0 or more previous regular expression (non-greedy)
-    A: .
-    Incorrect. The answer is: *?
-    Do you want to continue? (Y/N):
-
-    Q: 0 or more previous regular expression
-    A: *
-    Correct
-    Do you want to continue? (Y/N):n
-</code></pre>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -826,6 +737,14 @@ puts estimate_pi()
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/09/27/thinking-inside-the-box/">Thinking Inside the Box</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/27/how-young-is-too-young-to-begin-coding/">How Young Is Too Young to Begin Coding?</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/24/ruby-for-biologists-1/">Applying TDD in Writing Bioinformatics Software</a>
       </li>
     
@@ -835,14 +754,6 @@ puts estimate_pi()
     
       <li class="post">
         <a href="/blog/2013/09/23/javascript-flashcard/">JavaScript Flashcards</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/21/git-adventures-1/">Git Adventures - Part 1</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/20/lessons-in-base64-encoding/">Decode This Message</a>
       </li>
     
   </ul>

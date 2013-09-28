@@ -4,7 +4,7 @@
   <title><![CDATA[Waiting for Singularity]]></title>
   <link href="http://anaerobeth.github.io/atom.xml" rel="self"/>
   <link href="http://anaerobeth.github.io/"/>
-  <updated>2013-09-25T12:37:35-04:00</updated>
+  <updated>2013-09-27T21:47:10-04:00</updated>
   <id>http://anaerobeth.github.io/</id>
   <author>
     <name><![CDATA[Beth Tenorio]]></name>
@@ -12,6 +12,37 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Thinking inside the box]]></title>
+    <link href="http://anaerobeth.github.io/blog/2013/09/27/thinking-inside-the-box/"/>
+    <updated>2013-09-27T21:31:00-04:00</updated>
+    <id>http://anaerobeth.github.io/blog/2013/09/27/thinking-inside-the-box</id>
+    <content type="html"><![CDATA[<div class="embed-video-container"><iframe src="http://www.youtube.com/embed/lX6JcybgDFo "></iframe></div>
+
+
+<p>&ldquo;<a href="http://www.botndolly.com/box">21st Century motion control</a>&rdquo; pretty much sums it up:
+  &ldquo;Box&rdquo; explores the synthesis of real and digital space through projection-mapping on moving surfaces. The short film documents a live performance, captured entirely in camera. Bot &amp; Dolly produced this work to serve as both an artistic statement and technical demonstration. It is the culmination of multiple technologies, including large scale robotics, projection mapping, and software engineering. We believe this methodology has tremendous potential to radically transform theatrical presentations, and define new genres of expression.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How young is too young to begin coding?]]></title>
+    <link href="http://anaerobeth.github.io/blog/2013/09/27/how-young-is-too-young-to-begin-coding/"/>
+    <updated>2013-09-27T21:20:00-04:00</updated>
+    <id>http://anaerobeth.github.io/blog/2013/09/27/how-young-is-too-young-to-begin-coding</id>
+    <content type="html"><![CDATA[<p>Children have a knack for learning new languages. Could it be true for programming languages as well?</p>
+
+<pre><code>J. Paul Gibson had read educational psychology that suggested it was futile to try to reach children who had yet to achieve literacy. But when he made experimental forays into classrooms of 5- and 6-year-olds, the kids grasped his lessons with surprising ease.
+
+With the help of a custom Java applet, he was able to get kindergartners to write a tic-tac-toe program, based on step-by-step rules the students formulated as a group. And using colored balls and string, he taught the kids how to create graph algorithms, an essential component of computer science. “We believe our work shows that you can start teaching computer science before students even know how to read and write,” Gibson (who now teaches in France) wrote in a 2012 paper.
+
+“Children aged from 5-11 have so much potential for learning about algorithms and computation that it would be a shame to wait until they are teenagers before we teach them the foundations.” That notion is still too radical for most educators. While a popular movement is afoot to teach children, including adolescents, to code—touted by the likes of Bill Gates and basketball star Chris Bosh—few people believe that kindergartners can learn how to bend machines to their will.
+</code></pre>
+
+<p>Read the full article on <a href="http://www.wired.com/opinion/2013/09/ap_code/">Wired</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Applying TDD in writing bioinformatics software]]></title>

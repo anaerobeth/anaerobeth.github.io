@@ -9,8 +9,7 @@
   <meta name="author" content="Beth Tenorio">
 
   
-  <meta name="description" content="Do companies still use Fizzbuzz to find programmers who can code? The test may be old news but FizzBuzz is still relevant.
-Some interesting &hellip;">
+  <meta name="description" content="In 1910, the mathematician Srinivasa Ramanujan found several rapidly converging infinite series that can be used to generate a numerical &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +65,180 @@ Some interesting &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/10/pi-approximation-in-python-and-ruby/">Pi Approximation in Python and Ruby</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-10T17:58:00-04:00" pubdate data-updated="true">Sep 10<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In 1910, the mathematician Srinivasa Ramanujan found several rapidly converging infinite series that can be used to generate <a href="http://en.wikipedia.org/wiki/Srinivasa_Ramanujan#Mathematical_achievements">a numerical approximation of pi</a>. His series are now the basis for the fastest algorithms currently used to calculate π.</p>
+
+<p>Below are implementations of a function called estimate_pi that uses his formula to compute and return an estimate of pi (an exercise from Chapter 7 of Think Python by Allen Downey).</p>
+
+<h3>Solution in Python</h3>
+
+<pre><code>import math
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        recurse = factorial(n-1)
+        result = n * recurse
+        return result
+
+def estimate_pi():
+    total = 0
+    k = 0
+    factor = 2 * math.sqrt(2) / 9801
+    keep_going = True
+    while keep_going == True:
+        numerator = float(factorial(4*k) * (1103 + 26390 * k))
+        denominator = float(factorial(k)**4) * 396**(4*k)
+        term = factor * float(numerator/denominator)
+        total += term
+        k += 1
+        if term &lt; 1e-15:
+            keep_going == False
+            print "Finished at iteration number", k
+            break
+    return 1 / total
+
+print estimate_pi()
+</code></pre>
+
+<h3>Solution in Ruby</h3>
+
+<pre><code>def factorial(n)
+  if n == 0
+    return 1
+  else
+    recurse = factorial(n-1)
+    result = n * recurse
+  end
+  return result
+end
+
+def estimate_pi
+  total = 0
+  k = 0
+  factor = 2 * Math.sqrt(2) / 9801
+  keep_going = true
+
+  while keep_going == true
+    numerator = (factorial(4*k).to_f * (1103 + 26390 * k).to_f)
+    denominator = (factorial(k).to_f**4) * 396**(4*k).to_f
+    term = factor.to_f * (numerator.to_f/denominator.to_f)
+    total += term
+    k += 1
+    puts term &lt; 1E-15
+
+    if term &lt; 1E-15
+      keep_going == false
+      puts "Finished at iteration number #{k}"
+      break
+    end
+
+  end
+  return 1 / total
+end
+
+puts estimate_pi()
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code>Finished at iteration number 3
+3.14159265359
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/09/regex-flashcard/">Regular Expressions Flashcards</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-09T11:58:00-04:00" pubdate data-updated="true">Sep 9<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>A <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/regex-flashcards.rb">flashcard app</a> to test your knowledge of regular expressions.</p>
+
+<p>Question pool based on terminologies from <a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html">Ruby QuickRef</a> from ZenSpider.com</p>
+
+<p>Outputs:</p>
+
+<pre><code>    *** Test your knowledge of Regular Expressions***
+    Based on Ruby QuickRef from ZenSpider.com
+
+    Q: non-word boundary
+    A: \B
+    Correct
+    Do you want to continue? (Y/N):y
+
+    Q: 0 or more previous regular expression (non-greedy)
+    A: .
+    Incorrect. The answer is: *?
+    Do you want to continue? (Y/N):
+
+    Q: 0 or more previous regular expression
+    A: *
+    Correct
+    Do you want to continue? (Y/N):n
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -651,6 +824,14 @@ racecar: True
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/09/27/thinking-inside-the-box/">Thinking Inside the Box</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/27/how-young-is-too-young-to-begin-coding/">How Young Is Too Young to Begin Coding?</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/24/ruby-for-biologists-1/">Applying TDD in Writing Bioinformatics Software</a>
       </li>
     
@@ -660,14 +841,6 @@ racecar: True
     
       <li class="post">
         <a href="/blog/2013/09/23/javascript-flashcard/">JavaScript Flashcards</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/21/git-adventures-1/">Git Adventures - Part 1</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/20/lessons-in-base64-encoding/">Decode This Message</a>
       </li>
     
   </ul>
