@@ -4,7 +4,7 @@
   <title><![CDATA[Waiting for Singularity]]></title>
   <link href="http://anaerobeth.github.io/atom.xml" rel="self"/>
   <link href="http://anaerobeth.github.io/"/>
-  <updated>2013-09-27T21:47:10-04:00</updated>
+  <updated>2013-09-27T21:49:20-04:00</updated>
   <id>http://anaerobeth.github.io/</id>
   <author>
     <name><![CDATA[Beth Tenorio]]></name>
@@ -21,8 +21,9 @@
     <content type="html"><![CDATA[<div class="embed-video-container"><iframe src="http://www.youtube.com/embed/lX6JcybgDFo "></iframe></div>
 
 
-<p>&ldquo;<a href="http://www.botndolly.com/box">21st Century motion control</a>&rdquo; pretty much sums it up:
-  &ldquo;Box&rdquo; explores the synthesis of real and digital space through projection-mapping on moving surfaces. The short film documents a live performance, captured entirely in camera. Bot &amp; Dolly produced this work to serve as both an artistic statement and technical demonstration. It is the culmination of multiple technologies, including large scale robotics, projection mapping, and software engineering. We believe this methodology has tremendous potential to radically transform theatrical presentations, and define new genres of expression.</p>
+<p>&ldquo;<a href="http://www.botndolly.com/box">21st Century motion control</a>&rdquo; pretty much sums it up:</p>
+
+<blockquote><p>&ldquo;Box&rdquo; explores the synthesis of real and digital space through projection-mapping on moving surfaces. The short film documents a live performance, captured entirely in camera. Bot &amp; Dolly produced this work to serve as both an artistic statement and technical demonstration. It is the culmination of multiple technologies, including large scale robotics, projection mapping, and software engineering. We believe this methodology has tremendous potential to radically transform theatrical presentations, and define new genres of expression.</p></blockquote>
 ]]></content>
   </entry>
   
