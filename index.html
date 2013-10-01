@@ -9,7 +9,7 @@
   <meta name="author" content="Beth Tenorio">
 
   
-  <meta name="description" content="&ldquo;21st Century motion control&rdquo; pretty much sums it up: &ldquo;Box&rdquo; explores the synthesis of real and digital space through &hellip;">
+  <meta name="description" content="Working with MD5 hashes Take a crack at decoding another secret message: Here is an MD5 hash, b354e9b8c7a5fb1e073670a28f957032. You need to write a &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,139 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/10/01/decode-this-message-part-2-md5-hashes/">Decode This Message - Part 2</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-01T12:20:00-04:00" pubdate data-updated="true">Oct 1<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Working with MD5 hashes</h2>
+
+<p>Take a crack at decoding another secret message:</p>
+
+<blockquote><p>Here is an MD5 hash, b354e9b8c7a5fb1e073670a28f957032. You need to write a ruby program that uses brute force to determine the String value of the hash. Whoever gets the value, along with a working Ruby program, first wins a delicious prize!</p>
+
+<p>Hints
+All lowercase letters
+No spaces
+No underscores
+No numbers
+No characters other than letters a-z
+6 characters long</p></blockquote>
+
+<p>According to <a href="http://www.amazon.com/The-Ruby-Way-Techniques-Programming/dp/0321714636">The Ruby Way: Solutions and Techniques in Ruby Programming, Third Edition</a>: &ldquo;The MD5 message-digest algorithm produces a 128-bit fingerprint or message digest of a message of arbitrary length. This is in the form of a hash, so the encryption is one-way and does not allow for the discovery of the original message from the digest.&rdquo;</p>
+
+<p>MD5 hashes have been used for encoding passwords, credit cards numbers and other sensitive data into databases. <a href="http://www.md5hashgenerator.com/">An MD5 hash is NOT encryption</a> but is a one-way transaction and for suffuciently long strings, it is almost impossible to reverse engineer an MD5 hash to retrieve the original.</p>
+
+<p>Sounds like a challenge!</p>
+
+<p>Solution in Ruby (1)</p>
+
+<pre><code>require 'digest/md5'
+
+def make_word
+  word = []
+  letters = %w(a b c d e f g h i j k l m n o p q r s t u v w x y z)
+  6.times do
+    word &lt;&lt; letters.sample
+  end
+  return word.join().to_s
+end
+
+def make_hash(word)
+  Digest::MD5.hexdigest(word)
+end
+
+def brute_force(key)
+  message = make_word
+  coded_message = make_hash(message)
+
+  if coded_message == key
+    puts "The message is #{message}"
+    return false
+  end
+end
+
+while true
+  brute_force('b354e9b8c7a5fb1e073670a28f957032')
+end
+</code></pre>
+
+<p>Solution in Ruby (2)</p>
+
+<pre><code>require 'digest/md5'
+key = 'b354e9b8c7a5fb1e073670a28f957032'
+
+def make_words
+  word_list = []
+  letters = %w(a b c d e f g h i j k l m n o p q r s t u v w x y z)
+  words = letters.permutation(6).to_a
+  words.each do |word|
+    word_list &lt;&lt; word.join()
+  end
+  return word_list
+end
+
+def make_hash(word)
+  Digest::MD5.hexdigest(word)
+end
+
+def brute_force(key)
+  word_list = make_words
+  while true
+    word_list.each do |message|
+      coded_message = make_hash(message)
+      if coded_message == key
+        puts "The message is #{message}"
+        return false
+      end
+    end
+  end
+end
+
+puts make_hash('mangia')
+brute_force('b354e9b8c7a5fb1e073670a28f957032')
+</code></pre>
+
+<p>Output</p>
+
+<pre><code>$ ruby md5_decoder.rb
+The message is mangia
+</code></pre>
+
+<p>Bonus: The 5-second solution
+Chances are your hash has been cracked at <a href="http://www.md5decrypter.co.uk">MD5Decrypter</a> which has a database with a total 43 billion unique decrypted MD5 hashes.</p>
+
+<p>Thanks to Eric Kelly of Launch Academy for the original MD5 challenge which can be found in this gist:<a href="https://gist.github.com/HeroicEric/6779322">Secret Prize</a>.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -664,67 +797,6 @@ Do you want to continue? (Y/N): n
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/12/rake-flashcard/">Rake Tasks Flashcards</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-12T11:58:00-04:00" pubdate data-updated="true">Sep 12<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>A <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/rake-flashcards.rb">flashcard app</a> to test your knowledge of Rake tasks.</p>
-
-<p>Outputs:</p>
-
-<pre><code>    Q: What rake task does the following: Run tests quickly by merging all types and not resetting db?
-    A: test:all
-    Correct
-    Do you want to continue? (Y/N): y
-
-    Q: What rake task does the following: Load the seed data from db/seeds.rb?
-    A: db:seed
-    Correct
-    Do you want to continue? (Y/N): y
-
-    Q: What rake task does the following: Run tests quickly by merging all types and not resetting db?
-    A: db:test
-    Incorrect. The answer is: test:all
-    Do you want to continue? (Y/N): n
-</code></pre>
-
-<p>Read about the humble beginnings of Rake in <a href="http://rake.rubyforge.org/files/doc/rational_rdoc.html">Rational.doc</a>.
-For a good introduction to Rake, head to <a href="http://jasonseifer.com/2010/04/06/rake-tutorial">Jason Seifer&rsquo;s blog</a>.</p>
-
-<pre><code>    "I never intended to write this code. I‘m not convinced it is useful, and I‘m not convinced anyone would even be interested in it."
-    -  Jim Weirich
-</code></pre>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -740,6 +812,10 @@ For a good introduction to Rake, head to <a href="http://jasonseifer.com/2010/04
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/10/01/decode-this-message-part-2-md5-hashes/">Decode This Message - Part 2</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/27/thinking-inside-the-box/">Thinking Inside the Box</a>
       </li>
     
@@ -753,10 +829,6 @@ For a good introduction to Rake, head to <a href="http://jasonseifer.com/2010/04
     
       <li class="post">
         <a href="/blog/2013/09/24/jquery-flashcard/">JQuery API Flashcards</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/23/javascript-flashcard/">JavaScript Flashcards</a>
       </li>
     
   </ul>

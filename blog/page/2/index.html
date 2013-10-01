@@ -9,7 +9,7 @@
   <meta name="author" content="Beth Tenorio">
 
   
-  <meta name="description" content="In 1910, the mathematician Srinivasa Ramanujan found several rapidly converging infinite series that can be used to generate a numerical &hellip;">
+  <meta name="description" content="A flashcard app to test your knowledge of Rake tasks. Outputs: Q: What rake task does the following: Run tests quickly by merging all types and not &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,67 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/12/rake-flashcard/">Rake Tasks Flashcards</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-12T11:58:00-04:00" pubdate data-updated="true">Sep 12<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>A <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/rake-flashcards.rb">flashcard app</a> to test your knowledge of Rake tasks.</p>
+
+<p>Outputs:</p>
+
+<pre><code>    Q: What rake task does the following: Run tests quickly by merging all types and not resetting db?
+    A: test:all
+    Correct
+    Do you want to continue? (Y/N): y
+
+    Q: What rake task does the following: Load the seed data from db/seeds.rb?
+    A: db:seed
+    Correct
+    Do you want to continue? (Y/N): y
+
+    Q: What rake task does the following: Run tests quickly by merging all types and not resetting db?
+    A: db:test
+    Incorrect. The answer is: test:all
+    Do you want to continue? (Y/N): n
+</code></pre>
+
+<p>Read about the humble beginnings of Rake in <a href="http://rake.rubyforge.org/files/doc/rational_rdoc.html">Rational.doc</a>.
+For a good introduction to Rake, head to <a href="http://jasonseifer.com/2010/04/06/rake-tutorial">Jason Seifer&rsquo;s blog</a>.</p>
+
+<pre><code>    "I never intended to write this code. I‘m not convinced it is useful, and I‘m not convinced anyone would even be interested in it."
+    -  Jim Weirich
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -824,6 +885,10 @@ racecar: True
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/10/01/decode-this-message-part-2-md5-hashes/">Decode This Message - Part 2</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/27/thinking-inside-the-box/">Thinking Inside the Box</a>
       </li>
     
@@ -837,10 +902,6 @@ racecar: True
     
       <li class="post">
         <a href="/blog/2013/09/24/jquery-flashcard/">JQuery API Flashcards</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/23/javascript-flashcard/">JavaScript Flashcards</a>
       </li>
     
   </ul>

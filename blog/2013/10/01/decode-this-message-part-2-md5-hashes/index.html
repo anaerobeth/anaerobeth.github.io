@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Decode This Message - Waiting for Singularity</title>
+  <title>Decode this message - Part 2  - Waiting for Singularity</title>
   <meta name="author" content="Beth Tenorio">
 
   
-  <meta name="description" content="A lesson in Base64 encoding A recent hackathon offered a sweet discount to developers who could crack the following encoded message: &hellip;">
+  <meta name="description" content="Working with MD5 hashes Take a crack at decoding another secret message: Here is an MD5 hash, b354e9b8c7a5fb1e073670a28f957032. You need to write a &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://anaerobeth.github.io/blog/2013/09/20/lessons-in-base64-encoding">
+  <link rel="canonical" href="http://anaerobeth.github.io/blog/2013/10/01/decode-this-message-part-2-md5-hashes">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Waiting for Singularity" type="application/atom+xml">
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Decode This Message</h1>
+      <h1 class="entry-title">Decode This Message - Part 2</h1>
     
     
       <p class="meta">
@@ -84,58 +84,111 @@
   
 
 
-<time datetime="2013-09-20T13:54:00-04:00" pubdate data-updated="true">Sep 20<span>th</span>, 2013</time>
+<time datetime="2013-10-01T12:20:00-04:00" pubdate data-updated="true">Oct 1<span>st</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><h3>A lesson in Base64 encoding</h3>
+<div class="entry-content"><h2>Working with MD5 hashes</h2>
 
-<p>A recent hackathon offered a sweet discount to developers who could crack the following encoded message:</p>
+<p>Take a crack at decoding another secret message:</p>
 
-<pre><code>    bmljZSBkZWNvZGluZyB5b3VuZyBwYWRhd2FuIFVzZSB5b3UgbXVzdCBsZWFybmVyIGZyZWUgdGlja2V0IGNvZGU6IEhBQ0tUQVNUSUM=
+<blockquote><p>Here is an MD5 hash, b354e9b8c7a5fb1e073670a28f957032. You need to write a ruby program that uses brute force to determine the String value of the hash. Whoever gets the value, along with a working Ruby program, first wins a delicious prize!</p>
+
+<p>Hints
+All lowercase letters
+No spaces
+No underscores
+No numbers
+No characters other than letters a-z
+6 characters long</p></blockquote>
+
+<p>According to <a href="http://www.amazon.com/The-Ruby-Way-Techniques-Programming/dp/0321714636">The Ruby Way: Solutions and Techniques in Ruby Programming, Third Edition</a>: &ldquo;The MD5 message-digest algorithm produces a 128-bit fingerprint or message digest of a message of arbitrary length. This is in the form of a hash, so the encryption is one-way and does not allow for the discovery of the original message from the digest.&rdquo;</p>
+
+<p>MD5 hashes have been used for encoding passwords, credit cards numbers and other sensitive data into databases. <a href="http://www.md5hashgenerator.com/">An MD5 hash is NOT encryption</a> but is a one-way transaction and for suffuciently long strings, it is almost impossible to reverse engineer an MD5 hash to retrieve the original.</p>
+
+<p>Sounds like a challenge!</p>
+
+<p>Solution in Ruby (1)</p>
+
+<pre><code>require 'digest/md5'
+
+def make_word
+  word = []
+  letters = %w(a b c d e f g h i j k l m n o p q r s t u v w x y z)
+  6.times do
+    word &lt;&lt; letters.sample
+  end
+  return word.join().to_s
+end
+
+def make_hash(word)
+  Digest::MD5.hexdigest(word)
+end
+
+def brute_force(key)
+  message = make_word
+  coded_message = make_hash(message)
+
+  if coded_message == key
+    puts "The message is #{message}"
+    return false
+  end
+end
+
+while true
+  brute_force('b354e9b8c7a5fb1e073670a28f957032')
+end
 </code></pre>
 
-<p>The last character of the message is &ldquo;=&rdquo; which points us to the right direction.
-Base64 encoding uses &ldquo;=&rdquo; as the character for padding.</p>
+<p>Solution in Ruby (2)</p>
 
-<p>According to Wikipedia:</p>
+<pre><code>require 'digest/md5'
+key = 'b354e9b8c7a5fb1e073670a28f957032'
 
-<blockquote><p>Base64 encoding schemes are commonly used when there is a need to encode binary data that needs to be stored and transferred over media that are designed to deal with textual data.
-This is to ensure that the data remains intact without modification during transport.
-Base64 is commonly used in a number of applications including email via MIME, and storing complex data in XML.</p></blockquote>
+def make_words
+  word_list = []
+  letters = %w(a b c d e f g h i j k l m n o p q r s t u v w x y z)
+  words = letters.permutation(6).to_a
+  words.each do |word|
+    word_list &lt;&lt; word.join()
+  end
+  return word_list
+end
 
-<p>Solution in Python</p>
+def make_hash(word)
+  Digest::MD5.hexdigest(word)
+end
 
-<pre><code>    &gt;&gt;&gt; import base64
-    &gt;&gt;&gt; coded_string = '''bmljZSBkZWNvZGluZyB5b3VuZyBwYWRhd2FuIFVzZSB5b3UgbXVzdCBsZWFybmVyIGZyZWUgdGlja2V0IGNvZGU6IEhBQ0tUQVNUSUM='''
-    &gt;&gt;&gt; base64.b64decode(coded_string)
-    'nice decoding young padawan Use you must learner free ticket code: HACKTASTIC'
+def brute_force(key)
+  word_list = make_words
+  while true
+    word_list.each do |message|
+      coded_message = make_hash(message)
+      if coded_message == key
+        puts "The message is #{message}"
+        return false
+      end
+    end
+  end
+end
 
-    To encode a message in Ruby: Base64.encode64(message)
-    Tested in Python 2.7.2
+puts make_hash('mangia')
+brute_force('b354e9b8c7a5fb1e073670a28f957032')
 </code></pre>
 
-<p>Solution in Ruby</p>
+<p>Output</p>
 
-<pre><code>    2.0.0-p247 :001 &gt; require 'base64'
-     =&gt; true 
-
-    2.0.0-p247 :002 &gt; coded_string = "bmljZSBkZWNvZGluZyB5b3VuZyBwYWRhd2FuIFVzZSB5b3UgbXVzdCBsZWFybmVyIGZyZWUgdGlja2V0IGNvZGU6IEhBQ0tUQVNUSUM="
-     =&gt; "bmljZSBkZWNvZGluZyB5b3VuZyBwYWRhd2FuIFVzZSB5b3UgbXVzdCBsZWFybmVyIGZyZWUgdGlja2V0IGNvZGU6IEhBQ0tUQVNUSUM=" 
-
-    2.0.0-p247 :005 &gt; puts Base64.decode64(coded_string)
-    nice decoding young padawan Use you must learner free ticket code: HACKTASTIC
-     =&gt; nil 
-
-
-    To encode a message in Python: base64.b64encode(message)
-    Tested in Ruby 2.0.0
+<pre><code>$ ruby md5_decoder.rb
+The message is mangia
 </code></pre>
 
-<p>More on Base64 encoding in <a href="http://stackoverflow.com/questions/3470546/python-base64-data-decode">StackOverflow</a> and <a href="http://ruby-doc.org/stdlib-2.0.0/libdoc/base64/rdoc/Base64.html">Ruby-doc</a>.</p>
+<p>Bonus: The 5-second solution
+Chances are your hash has been cracked at <a href="http://www.md5decrypter.co.uk">MD5Decrypter</a> which has a database with a total 43 billion unique decrypted MD5 hashes.</p>
+
+<p>Thanks to Eric Kelly of Launch Academy for the original MD5 challenge which can be found in this gist:<a href="https://gist.github.com/HeroicEric/6779322">Secret Prize</a>.</p>
 </div>
 
 
@@ -158,7 +211,7 @@ Base64 is commonly used in a number of applications including email via MIME, an
   
 
 
-<time datetime="2013-09-20T13:54:00-04:00" pubdate data-updated="true">Sep 20<span>th</span>, 2013</time>
+<time datetime="2013-10-01T12:20:00-04:00" pubdate data-updated="true">Oct 1<span>st</span>, 2013</time>
       
 
 
@@ -166,7 +219,7 @@ Base64 is commonly used in a number of applications including email via MIME, an
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://anaerobeth.github.io/blog/2013/09/20/lessons-in-base64-encoding/" data-via="" data-counturl="http://anaerobeth.github.io/blog/2013/09/20/lessons-in-base64-encoding/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://anaerobeth.github.io/blog/2013/10/01/decode-this-message-part-2-md5-hashes/" data-via="" data-counturl="http://anaerobeth.github.io/blog/2013/10/01/decode-this-message-part-2-md5-hashes/" >Tweet</a>
   
   
   
@@ -175,10 +228,8 @@ Base64 is commonly used in a number of applications including email via MIME, an
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/09/18/tmux-flashcard/" title="Previous Post: Tmux Key Bindings Flashcards">&laquo; Tmux Key Bindings Flashcards</a>
+        <a class="basic-alignment left" href="/blog/2013/09/27/thinking-inside-the-box/" title="Previous Post: Thinking inside the box">&laquo; Thinking inside the box</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/09/21/git-adventures-1/" title="Next Post: Git Adventures - Part 1">Git Adventures - Part 1 &raquo;</a>
       
     </p>
   </footer>
