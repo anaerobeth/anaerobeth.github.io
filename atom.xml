@@ -4,7 +4,7 @@
   <title><![CDATA[Waiting for Singularity]]></title>
   <link href="http://anaerobeth.github.io/atom.xml" rel="self"/>
   <link href="http://anaerobeth.github.io/"/>
-  <updated>2013-10-01T13:02:57-04:00</updated>
+  <updated>2013-10-01T13:05:24-04:00</updated>
   <id>http://anaerobeth.github.io/</id>
   <author>
     <name><![CDATA[Beth Tenorio]]></name>
@@ -96,7 +96,6 @@ def brute_force(key)
   end
 end
 
-puts make_hash('mangia')
 brute_force('b354e9b8c7a5fb1e073670a28f957032')
 </code></pre>
 
