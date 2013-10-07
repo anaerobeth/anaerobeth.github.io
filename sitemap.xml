@@ -2,23 +2,23 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://anaerobeth.github.io/blog/2013/08/29/big-data-is-watching-you/</loc>
-        <lastmod>2013-09-27T21:51:17-04:00</lastmod>
+        <lastmod>2013-10-05T23:46:23-04:00</lastmod>
     </url>
     <url>
         <loc>
             http://anaerobeth.github.io/blog/2013/09/02/palindrome-checker-in-python-and-ruby/
         </loc>
-        <lastmod>2013-09-02T10:48:47-04:00</lastmod>
+        <lastmod>2013-10-06T09:36:42-04:00</lastmod>
     </url>
     <url>
         <loc>http://anaerobeth.github.io/blog/2013/09/03/sublime-text-pro-tips/</loc>
-        <lastmod>2013-09-20T22:53:21-04:00</lastmod>
+        <lastmod>2013-10-07T15:10:24-04:00</lastmod>
     </url>
     <url>
         <loc>
             http://anaerobeth.github.io/blog/2013/09/04/rot13-encryption-in-python-and-ruby/
         </loc>
-        <lastmod>2013-09-05T20:04:31-04:00</lastmod>
+        <lastmod>2013-10-05T23:55:35-04:00</lastmod>
     </url>
     <url>
         <loc>http://anaerobeth.github.io/blog/2013/09/05/chess-quote-bot/</loc>
@@ -26,81 +26,81 @@
     </url>
     <url>
         <loc>http://anaerobeth.github.io/blog/2013/09/06/ruby-globals-flashcard/</loc>
-        <lastmod>2013-09-20T13:58:45-04:00</lastmod>
+        <lastmod>2013-10-07T15:10:59-04:00</lastmod>
     </url>
     <url>
         <loc>http://anaerobeth.github.io/blog/2013/09/07/all-the-buzz-about-fizzbuzz/</loc>
-        <lastmod>2013-09-24T16:02:05-04:00</lastmod>
+        <lastmod>2013-10-05T23:59:31-04:00</lastmod>
     </url>
     <url>
         <loc>http://anaerobeth.github.io/blog/2013/09/09/regex-flashcard/</loc>
-        <lastmod>2013-09-25T12:36:44-04:00</lastmod>
+        <lastmod>2013-10-05T23:58:38-04:00</lastmod>
     </url>
     <url>
         <loc>
             http://anaerobeth.github.io/blog/2013/09/10/pi-approximation-in-python-and-ruby/
         </loc>
-        <lastmod>2013-09-16T15:38:15-04:00</lastmod>
+        <lastmod>2013-10-06T00:02:30-04:00</lastmod>
     </url>
     <url>
         <loc>http://anaerobeth.github.io/blog/2013/09/12/rake-flashcard/</loc>
-        <lastmod>2013-09-25T12:36:52-04:00</lastmod>
+        <lastmod>2013-10-05T23:58:25-04:00</lastmod>
     </url>
     <url>
         <loc>http://anaerobeth.github.io/blog/2013/09/16/brains-in-jars/</loc>
-        <lastmod>2013-09-16T15:37:58-04:00</lastmod>
+        <lastmod>2013-10-06T00:04:00-04:00</lastmod>
     </url>
     <url>
         <loc>http://anaerobeth.github.io/blog/2013/09/18/tmux-flashcard/</loc>
-        <lastmod>2013-09-25T12:36:59-04:00</lastmod>
+        <lastmod>2013-10-05T23:58:18-04:00</lastmod>
     </url>
     <url>
         <loc>http://anaerobeth.github.io/blog/2013/09/20/lessons-in-base64-encoding/</loc>
-        <lastmod>2013-10-03T01:15:36-04:00</lastmod>
+        <lastmod>2013-10-06T00:04:52-04:00</lastmod>
     </url>
     <url>
         <loc>http://anaerobeth.github.io/blog/2013/09/21/git-adventures-1/</loc>
-        <lastmod>2013-09-20T23:21:53-04:00</lastmod>
+        <lastmod>2013-10-06T09:36:44-04:00</lastmod>
     </url>
     <url>
         <loc>http://anaerobeth.github.io/blog/2013/09/23/javascript-flashcard/</loc>
-        <lastmod>2013-09-25T12:37:05-04:00</lastmod>
+        <lastmod>2013-10-06T00:01:50-04:00</lastmod>
     </url>
     <url>
         <loc>http://anaerobeth.github.io/blog/2013/09/24/jquery-flashcard/</loc>
-        <lastmod>2013-09-25T12:36:32-04:00</lastmod>
+        <lastmod>2013-10-06T00:01:23-04:00</lastmod>
     </url>
     <url>
         <loc>http://anaerobeth.github.io/blog/2013/09/24/ruby-for-biologists-1/</loc>
-        <lastmod>2013-09-24T16:14:44-04:00</lastmod>
+        <lastmod>2013-10-06T09:36:43-04:00</lastmod>
     </url>
     <url>
         <loc>
             http://anaerobeth.github.io/blog/2013/09/27/how-young-is-too-young-to-begin-coding/
         </loc>
-        <lastmod>2013-09-27T22:12:24-04:00</lastmod>
-    </url>
-    <url>
-        <loc>http://anaerobeth.github.io/blog/2013/09/27/small-cubes-that-self-assemble/</loc>
-        <lastmod>2013-10-05T22:51:21-04:00</lastmod>
+        <lastmod>2013-10-05T23:53:37-04:00</lastmod>
     </url>
     <url>
         <loc>http://anaerobeth.github.io/blog/2013/09/27/thinking-inside-the-box/</loc>
-        <lastmod>2013-09-27T22:12:35-04:00</lastmod>
+        <lastmod>2013-10-05T23:52:24-04:00</lastmod>
     </url>
     <url>
         <loc>
             http://anaerobeth.github.io/blog/2013/10/01/decode-this-message-part-2-md5-hashes/
         </loc>
-        <lastmod>2013-10-01T13:34:37-04:00</lastmod>
+        <lastmod>2013-10-05T23:55:41-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://anaerobeth.github.io/blog/2013/10/03/small-cubes-that-self-assemble/</loc>
+        <lastmod>2013-10-07T15:08:27-04:00</lastmod>
     </url>
     <url>
         <loc>http://anaerobeth.github.io/blog/archives/</loc>
-        <lastmod>2013-10-05T22:51:21-04:00</lastmod>
+        <lastmod>2013-10-07T15:10:59-04:00</lastmod>
     </url>
     <url>
         <loc>http://anaerobeth.github.io/</loc>
-        <lastmod>2013-10-05T22:51:21-04:00</lastmod>
+        <lastmod>2013-10-07T15:10:59-04:00</lastmod>
     </url>
     <url>
         <loc>http://anaerobeth.github.io/robots.txt</loc>

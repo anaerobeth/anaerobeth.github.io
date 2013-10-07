@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: code, | Waiting for Singularity]]></title>
+  <link href="http://anaerobeth.github.io/blog/categories/code/atom.xml" rel="self"/>
+  <link href="http://anaerobeth.github.io/"/>
+  <updated>2013-10-07T15:11:07-04:00</updated>
+  <id>http://anaerobeth.github.io/</id>
+  <author>
+    <name><![CDATA[Beth Tenorio]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Applying TDD in writing bioinformatics software]]></title>
+    <link href="http://anaerobeth.github.io/blog/2013/09/24/ruby-for-biologists-1/"/>
+    <updated>2013-09-24T15:58:00-04:00</updated>
+    <id>http://anaerobeth.github.io/blog/2013/09/24/ruby-for-biologists-1</id>
+    <content type="html"><![CDATA[<h2>Ruby for Biologists &ndash; Part 1</h2>
+
+<p>DNA sequence analysis is a basic task in molecular biology and is a good starting point for software development using Test Driven Development (TDD).
+Given the sequence of a common sequencing primer, &ldquo;GCAATTAACCCTCACTAAAGG&rdquo;, I wrote a program to calculate the percentage of each nucleotide.
+For this, I chose <a href="https://www.ruby-lang.org/en/">Ruby</a>, a dynamic scripting language and <a href="http://rspec.info/">Rspec</a>, a testing tool for the Ruby language that uses simple language to describe expectations on how the code should work.</p>
+
+<p>Starting with a simple example that expresses some basic behaviour, for example <em>&lsquo;it counts the frequency of nucleotides in a string&rsquo;</em> and following TDD best practices, I wrote a failing test then wrote just enough Ruby code to make it pass.
+I then improved the code, added another expected behavior and repeated the cycle. In TDD circles, this is known as Red-Green-Refactor. Primer sequences are typically 18-24 nucleotides, but for genes that are several thousand nucleotides in length, a script that automates the task of calculating DNA statistics can be quite powerful.</p>
+
+<p>Specs</p>
+
+<pre><code>    # dna_stats_spec.rb
+
+    require 'rspec'
+
+    require_relative 'dna_stats'
+
+    describe 'Dna statistics' do
+      it 'counts the frequency of nucleotides in a string' do
+        expect(Dna.new('agccttaa').count).to eql([["a", 3], \
+        ["c", 2], ["g", 1], ["t", 2]])
+      end
+
+      it 'counts the frequency of nucleotides in a string' do
+        expect(Dna.new('nggaatncc').count).to eql([["a", 2], \
+        ["c", 2], ["g", 2], ["n", 2], ["t", 1]])
+      end
+
+      it 'analyzes the dna' do
+        expect(Dna.new('aaggcccttt').analyze).to eql([["a", 0.2], \
+        ["c", 0.3], ["g", 0.2], ["t", 0.3]])
+      end
+
+      it 'displays the dna statistics' do
+        expect(Dna.new('aaggcccttt').display).to eql("DNA statistics \
+        (10 residue sequence) A: 20.0% C: 30.0% G: 20.0% T: 30.0%")
+      end
+    end
+</code></pre>
+
+<p>Solution in Ruby</p>
+
+<pre><code>    # dna_stats.rb
+
+    class Dna
+
+      attr_reader :sequence, :sorted_array, :statistics, :string
+
+      def initialize(sequence)
+
+        @sequence = sequence
+        @sorted_array = []
+        @statistics = []
+        @string = ''
+      end
+
+
+      def count
+        hash = {}
+        sequence.each_char do | char |
+          hash[char] ? hash[char] &lt;&lt; char : hash[char] = [char]
+        end
+
+        hash.each do | key, value |
+          hash[key] = value.size.to_i
+        end
+        #binding.pry
+        @sorted_array = hash.sort
+        return @sorted_array
+
+      end
+
+      def analyze
+        @total_bases = 0
+        count
+        @sorted_array.each do | item |
+          @total_bases += item[1]
+        end
+        string &lt;&lt; "DNA statistics (#{@total_bases} residue sequence)"
+        @sorted_array.each do | item |
+          @statistics &lt;&lt; [item[0], (item[1].to_f / @total_bases)]
+        end
+        return @statistics
+      end
+
+      def display
+        analyze
+        @statistics.each do | item |
+          string &lt;&lt; " #{item[0].upcase}: #{(item[1]*100).round(1)}%"
+        end
+        return string
+      end
+    end
+
+    sequence = "GCAATTAACCCTCACTAAAGG"
+    puts "DNA sequence: " + sequence
+    seq = Dna.new(sequence)
+    puts seq.display
+</code></pre>
+
+<p>Output</p>
+
+<pre><code>    ruby-bio-suite $ ruby dna_statistics.rb
+
+    DNA sequence: GCAATTAACCCTCACTAAAGG
+    DNA statistics (21 residue sequence) A: 38.1% C: 28.6% G: 14.3% T: 19.0%
+</code></pre>
+
+<p>Future implementations of this code will include methods for determining melting temperature, Tm and detecting hairpin loops.</p>
+
+<p>Got 15 minutes? Give Ruby a try now: <a href="http://tryruby.org/">Try Ruby</a>.
+Learn more about Ruby and Rspec <a href="https://www.ruby-lang.org/en/documentation/quickstart/">here</a> and <a href="https://peepcode.com/screencasts/rspec">here</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[JQuery API Flashcards]]></title>
+    <link href="http://anaerobeth.github.io/blog/2013/09/24/jquery-flashcard/"/>
+    <updated>2013-09-24T13:58:00-04:00</updated>
+    <id>http://anaerobeth.github.io/blog/2013/09/24/jquery-flashcard</id>
+    <content type="html"><![CDATA[<p>A <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/jquery-flashcards.rb">flashcard app</a> to test your knowledge of the JQuery API.
+Question pool based on documentation from  <a href="http://api.jquery.com/">jQuery API</a>.</p>
+
+<p>Outputs:</p>
+
+<pre><code>    *** Test your knowledge of jQuery API !***
+    Vocabulary based on jQuery API documentation
+    http://api.jquery.com/
+
+    Q: Selects the element that is the root of the document.
+    A: :root
+    Correct
+    Enter any key to continue or 'x' to exit: y
+
+    Q: Reduce the set of matched elements to the first in the set.
+    A: :first
+    Incorrect. The answer is: .first()
+    Enter any key to continue or 'x' to exit:
+
+    Q: Selects all next elements matching "next" that are immediately preceded by a sibling "prev".
+    A: ("prev" &gt; "next")
+    Incorrect. The answer is: ("prev + next")
+    Enter any key to continue or 'x' to exit: x
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[JavaScript Flashcards]]></title>
+    <link href="http://anaerobeth.github.io/blog/2013/09/23/javascript-flashcard/"/>
+    <updated>2013-09-23T11:58:00-04:00</updated>
+    <id>http://anaerobeth.github.io/blog/2013/09/23/javascript-flashcard</id>
+    <content type="html"><![CDATA[<p>A <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/javascript-flashcards.rb">flashcard app</a> to test your knowledge of JavaScript statements.
+Question pool based on documentation from the friendly folks at <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference">Mozilla Developer Network</a>.</p>
+
+<p>Outputs:</p>
+
+<pre><code>    *** Test your knowledge of JavaScript statements!***
+    Vocabulary based on vocabulary from Mozilla Developer Network
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
+
+    Q: Declares a read-only named constant.
+    A: const
+    Correct
+    Enter any key to continue or 'x' to exit: r
+
+    Q: Executes a statement if a specified condition is true. If the condition is false, another statement can be executed.
+    A: while
+    Incorrect. The answer is: if...else
+    Enter any key to continue or 'x' to exit: y
+
+    Q: A statement used to group zero or more statements and is delimited by a pair of curly brackets.
+    A: block
+    Correct
+    Enter any key to continue or 'x' to exit: x
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git Adventures - Part 1]]></title>
+    <link href="http://anaerobeth.github.io/blog/2013/09/21/git-adventures-1/"/>
+    <updated>2013-09-21T15:58:00-04:00</updated>
+    <id>http://anaerobeth.github.io/blog/2013/09/21/git-adventures-1</id>
+    <content type="html"><![CDATA[<ul>
+<li>How to fork a GitHub project</li>
+<li>Cloning a forked repository and its branches</li>
+<li>Updating a forked repository</li>
+</ul>
+
+
+<p>Scenario 1: I want to fork a project on GitHub to work on a feature in my local repository.</p>
+
+<pre><code>    Go to the prject page on GitHub, https://github.com/PROJECT_AUTHOR/PROJECT.git
+    Click the "Fork" button
+    The project will be added to your list of repositories
+</code></pre>
+
+<p>Scenario 2: The Github repository has a branch called &ldquo;bananas&rdquo;. I want to copy that branch in my local repository.</p>
+
+<pre><code>    git fetch origin
+    git checkout --track origin/bananas
+</code></pre>
+
+<p>Scenario 3: A day later, another branch called &ldquo;cool-beans&rdquo; was added to the original project. I want to add that branch in my local repository as well.</p>
+
+<pre><code>    git remote add upstream https://github.com/PROJECT_AUTHOR/PROJECT.git
+    git fetch upstream
+    git checkout --track upstream/cool-beans
+</code></pre>
+
+<p>References:
+<a href="https://help.github.com/articles/fork-a-repo">GitHub article</a>
+and StackOverflow discussions <a href="http://stackoverflow.com/questions/2767605/after-i-fork-a-github-project-how-can-i-stay-current-with-the-original-project?rq=1">here</a> and <a href="http://stackoverflow.com/questions/7244321/how-to-update-github-forked-repository?rq=1">here</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tmux Key Bindings Flashcards]]></title>
+    <link href="http://anaerobeth.github.io/blog/2013/09/18/tmux-flashcard/"/>
+    <updated>2013-09-18T11:58:00-04:00</updated>
+    <id>http://anaerobeth.github.io/blog/2013/09/18/tmux-flashcard</id>
+    <content type="html"><![CDATA[<p>A <a href="https://github.com/anaerobeth/ruby-flashcard/blob/master/tmux-flashcards.rb">flashcard app</a> to test your knowledge of Tmux key bindings.
+Question pool based on the Tmux manual pages from <a href="http://www.openbsd.org/.">http://www.openbsd.org/.</a></p>
+
+<p>Outputs:</p>
+
+<pre><code>*** Test your knowledge of Ruby Globals!***
+Based on the manual pages from http://www.openbsd.org/
+
+Q: What tmux key binding does the following: Force redraw of the attached client
+A: a
+Incorrect. The answer is: r
+Do you want to continue? (Y/N): y
+
+Q: What tmux key binding does the following: Break the current pane out of the window
+A: !
+Correct
+Do you want to continue? (Y/N): y
+
+Q: What tmux key binding does the following: Enter copy mode to copy text or view the history
+A: [
+Correct
+Do you want to continue? (Y/N): n
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>

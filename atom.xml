@@ -4,7 +4,7 @@
   <title><![CDATA[Waiting for Singularity]]></title>
   <link href="http://anaerobeth.github.io/atom.xml" rel="self"/>
   <link href="http://anaerobeth.github.io/"/>
-  <updated>2013-10-05T23:40:09-04:00</updated>
+  <updated>2013-10-07T15:11:07-04:00</updated>
   <id>http://anaerobeth.github.io/</id>
   <author>
     <name><![CDATA[Beth Tenorio]]></name>
@@ -12,6 +12,18 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Self-assembling robots]]></title>
+    <link href="http://anaerobeth.github.io/blog/2013/10/03/small-cubes-that-self-assemble/"/>
+    <updated>2013-10-03T21:31:00-04:00</updated>
+    <id>http://anaerobeth.github.io/blog/2013/10/03/small-cubes-that-self-assemble</id>
+    <content type="html"><![CDATA[<div class="embed-video-container"><iframe src="http://www.youtube.com/embed/6aZbJS6LZbs "></iframe></div>
+
+
+<p>[M-Blocks] (<a href="http://web.mit.edu/newsoffice/2013/simple-scheme-for-self-assembling-robots-1004.html">http://web.mit.edu/newsoffice/2013/simple-scheme-for-self-assembling-robots-1004.html</a>) are a new generation of cube-shaped robots with no external moving parts yet, when working together, they are capable of a wide-range of motion: they can propel themselves forward, jump on top of each other, and snap together using tiny motors and magnets.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Decode this message - Part 2 ]]></title>
@@ -124,18 +136,6 @@ The message is mangia
 <p>&ldquo;<a href="http://www.botndolly.com/box">21st Century motion control</a>&rdquo; pretty much sums it up:</p>
 
 <blockquote><p>&ldquo;Box&rdquo; explores the synthesis of real and digital space through projection-mapping on moving surfaces. The short film documents a live performance, captured entirely in camera. Bot &amp; Dolly produced this work to serve as both an artistic statement and technical demonstration. It is the culmination of multiple technologies, including large scale robotics, projection mapping, and software engineering. We believe this methodology has tremendous potential to radically transform theatrical presentations, and define new genres of expression.</p></blockquote>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Self-assembling robots]]></title>
-    <link href="http://anaerobeth.github.io/blog/2013/09/27/small-cubes-that-self-assemble/"/>
-    <updated>2013-09-27T21:31:00-04:00</updated>
-    <id>http://anaerobeth.github.io/blog/2013/09/27/small-cubes-that-self-assemble</id>
-    <content type="html"><![CDATA[<div class="embed-video-container"><iframe src="http://www.youtube.com/embed/6aZbJS6LZbs "></iframe></div>
-
-
-<p>[M-Blocks] (<a href="http://web.mit.edu/newsoffice/2013/simple-scheme-for-self-assembling-robots-1004.html">http://web.mit.edu/newsoffice/2013/simple-scheme-for-self-assembling-robots-1004.html</a>) are a new generation of cube-shaped robots with no external moving parts yet, when working together, they are capable of a wide-range of motion: they can propel themselves forward, jump on top of each other, and snap together using tiny motors and magnets.</p>
 ]]></content>
   </entry>
   
@@ -301,7 +301,7 @@ Question pool based on documentation from  <a href="http://api.jquery.com/">jQue
     Q: Reduce the set of matched elements to the first in the set.
     A: :first
     Incorrect. The answer is: .first()
-    Enter any key to continue or 'x' to exit: 
+    Enter any key to continue or 'x' to exit:
 
     Q: Selects all next elements matching "next" that are immediately preceded by a sibling "prev".
     A: ("prev" &gt; "next")
@@ -357,7 +357,7 @@ Question pool based on documentation from the friendly folks at <a href="https:/
 
 <p>Scenario 1: I want to fork a project on GitHub to work on a feature in my local repository.</p>
 
-<pre><code>    Go to the prject page on GitHub, https://github.com/PROJECT_AUTHOR/PROJECT.git 
+<pre><code>    Go to the prject page on GitHub, https://github.com/PROJECT_AUTHOR/PROJECT.git
     Click the "Fork" button
     The project will be added to your list of repositories
 </code></pre>
@@ -416,14 +416,14 @@ Base64 is commonly used in a number of applications including email via MIME, an
 <p>Solution in Ruby</p>
 
 <pre><code>    2.0.0-p247 :001 &gt; require 'base64'
-     =&gt; true 
+     =&gt; true
 
     2.0.0-p247 :002 &gt; coded_string = "bmljZSBkZWNvZGluZyB5b3VuZyBwYWRhd2FuIFVzZSB5b3UgbXVzdCBsZWFybmVyIGZyZWUgdGlja2V0IGNvZGU6IEhBQ0tUQVNUSUM="
-     =&gt; "bmljZSBkZWNvZGluZyB5b3VuZyBwYWRhd2FuIFVzZSB5b3UgbXVzdCBsZWFybmVyIGZyZWUgdGlja2V0IGNvZGU6IEhBQ0tUQVNUSUM=" 
+     =&gt; "bmljZSBkZWNvZGluZyB5b3VuZyBwYWRhd2FuIFVzZSB5b3UgbXVzdCBsZWFybmVyIGZyZWUgdGlja2V0IGNvZGU6IEhBQ0tUQVNUSUM="
 
     2.0.0-p247 :005 &gt; puts Base64.decode64(coded_string)
     nice decoding young padawan Use you must learner free ticket code: HACKTASTIC
-     =&gt; nil 
+     =&gt; nil
 
 
     To encode a message in Python: base64.b64encode(message)
@@ -913,9 +913,9 @@ unladen swallow: haynqra-fjnyybj
     <updated>2013-09-03T11:58:00-04:00</updated>
     <id>http://anaerobeth.github.io/blog/2013/09/03/sublime-text-pro-tips</id>
     <content type="html"><![CDATA[<p>This Sublime Text 2 feature is a real-time saver:
-1. Place your cursor within the word and press Ctrl+Cmd+G.
-2. This selects every occurrence of that word and creates multiple cursors.
-3. Edit the word and watch the multiple cursors do the same.</p>
+Place your cursor within the word and press Ctrl+Cmd+G.
+This selects every occurrence of that word and creates multiple cursors.
+Edit the word and watch the multiple cursors do the same.</p>
 
 <p>Learn about Multiple Cursors and other pro tips from the article <a href="http://www.webdesignermag.co.uk/inspiration/10-must-know-sublime-text-2-tips/">10 Must-know Sublime Text 2 tips</a>.</p>
 ]]></content>
